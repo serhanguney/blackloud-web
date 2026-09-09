@@ -123,12 +123,17 @@
      which writes the same transform per frame. Change both together. */
   --hero-scale: 1.7;
   --hero-lift: -6%;
-  --hero-origin: 49% 42%;
+  /* Both plates are cropped so the head's centroid sits at 50.06% of the frame.
+     That is what lets a plain centre origin and centre focus hold the head on
+     the middle of the screen at every aspect and every scale. Re-crop both
+     together if either is ever replaced. */
+  --hero-origin: 50% 42%;
   --hero-focus: center 42%;
   --hero-row-gap: 1vh;
   --hero-type: min(13vw, calc(20vh / var(--z, 1)));
 
   --z-canvas: 1;
+  --z-glow: 45;
   --z-content: 3;
   --z-header: 50;
   --z-skip: 300;
