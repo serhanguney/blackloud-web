@@ -27,8 +27,8 @@ export default function AppleIcon() {
       {/* eslint-disable-next-line nextjs/no-img-element -- ImageResponse renders through satori, not the DOM */}
       <img
         src={`data:image/svg+xml;base64,${Buffer.from(mark).toString('base64')}`}
-        width={78}
-        height={112}
+        width={92}
+        height={132}
         alt=""
       />
     </div>,
