@@ -1,0 +1,35 @@
+.glyph {
+  display: inline-block;
+  background: currentcolor;
+  -webkit-mask: url('/logo.svg') center / contain no-repeat;
+  mask: url('/logo.svg') center / contain no-repeat;
+}
+
+/* The stroke weight and colour are baked into the file, so this one paints
+   itself rather than masking a background. */
+.outline {
+  display: inline-block;
+  background: url('/logo-outline.svg') center / contain no-repeat;
+}
+
+.accent {
+  background: var(--acc);
+}
+
+.header {
+  width: 15px;
+  height: 20px;
+}
+
+.footer {
+  width: 12px;
+  height: 16px;
+}
+
+/* Sits in a line of display type, so it scales with the type rather than the page. */
+.inline {
+  width: 0.42em;
+  height: 0.56em;
+  margin: 0 0.1em;
+  vertical-align: 0.07em;
+}

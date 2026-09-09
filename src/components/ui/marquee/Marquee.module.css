@@ -1,0 +1,29 @@
+/* Two copies of the children, translated by exactly half the track, so the
+   loop is seamless. Anything that changes the copy count breaks that. */
+.track {
+  width: max-content;
+  will-change: transform;
+  animation: drift var(--drift-duration) linear infinite;
+}
+
+.reverse {
+  animation-name: driftReverse;
+}
+
+@keyframes drift {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes driftReverse {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
