@@ -51,24 +51,18 @@ export const Hero = () => (
     </div>
 
     <div className={styles.stack}>
-      <div data-marquee-shift className={styles.shift}>
-        <Marquee
-          duration="var(--drift-back)"
-          className={cn(styles.row, styles.outline, styles.rowBack)}
-        >
+      <div data-marquee-shift className={cn(styles.shift, styles.rowBack)}>
+        <Marquee duration="var(--drift-back)" className={cn(styles.row, styles.outline)}>
           <OutlineRun />
         </Marquee>
       </div>
-      <div data-marquee-shift className={styles.shift}>
-        <Marquee duration="var(--drift-mid)" reverse className={cn(styles.row, styles.rowMid)}>
+      <div data-marquee-shift className={cn(styles.shift, styles.rowMid)}>
+        <Marquee duration="var(--drift-mid)" reverse className={styles.row}>
           <SolidRun />
         </Marquee>
       </div>
-      <div data-marquee-shift className={styles.shift}>
-        <Marquee
-          duration="var(--drift-fore)"
-          className={cn(styles.row, styles.outline, styles.rowFore)}
-        >
+      <div data-marquee-shift className={cn(styles.shift, styles.rowFore)}>
+        <Marquee duration="var(--drift-fore)" className={cn(styles.row, styles.outline)}>
           <OutlineRun />
         </Marquee>
       </div>

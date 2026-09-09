@@ -62,16 +62,8 @@
   will-change: transform;
 }
 
-.row {
-  white-space: nowrap;
-  font-weight: var(--weight-black);
-  font-stretch: var(--wdth-display);
-  font-size: var(--hero-type);
-  line-height: var(--leading-marquee);
-  letter-spacing: var(--tracking-marquee);
-  text-transform: uppercase;
-}
-
+/* The fade lives here rather than on the marquee track, because `animation` is
+   a shorthand and would replace the drift the track sets. */
 .rowBack {
   animation: fadeIn var(--duration-intro) ease 100ms both;
 }
@@ -80,6 +72,16 @@
 }
 .rowFore {
   animation: fadeIn var(--duration-intro) ease 400ms both;
+}
+
+.row {
+  white-space: nowrap;
+  font-weight: var(--weight-black);
+  font-stretch: var(--wdth-display);
+  font-size: var(--hero-type);
+  line-height: var(--leading-marquee);
+  letter-spacing: var(--tracking-marquee);
+  text-transform: uppercase;
 }
 
 /* The outline rows are the same word set with no fill, so the solid row in the
