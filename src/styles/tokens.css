@@ -36,12 +36,12 @@
 
   /* Golden ratio, base 27px (the body line box): 27 / 44 / 71 / 115 / 186.
      The middle term is vh on purpose: sections are paced against screen height. */
-  --s0: clamp(1rem, 2.4vh, 1.6875rem);
-  --s1: clamp(1.625rem, 4vh, 2.75rem);
-  --s2: clamp(2.625rem, 6.5vh, 4.4375rem);
-  --s3: clamp(4.25rem, 10.5vh, 7.1875rem);
-  --s4: clamp(6.875rem, 17vh, 11.625rem);
-  --s5: clamp(11.25rem, 28vh, 18.75rem);
+  --s0: clamp(1rem, calc(2.4vh / var(--z, 1)), 1.6875rem);
+  --s1: clamp(1.625rem, calc(4vh / var(--z, 1)), 2.75rem);
+  --s2: clamp(2.625rem, calc(6.5vh / var(--z, 1)), 4.4375rem);
+  --s3: clamp(4.25rem, calc(10.5vh / var(--z, 1)), 7.1875rem);
+  --s4: clamp(6.875rem, calc(17vh / var(--z, 1)), 11.625rem);
+  --s5: clamp(11.25rem, calc(28vh / var(--z, 1)), 18.75rem);
   /* The page gutter. Every section inset uses this and nothing else. */
   --gx: clamp(1.5rem, 7vw, 7.5rem);
 
@@ -87,7 +87,7 @@
 
   --surface-video: #111110;
 
-  --gallery-height: clamp(15rem, 42vh, 28.75rem);
+  --gallery-height: clamp(15rem, calc(42vh / var(--z, 1)), 28.75rem);
   --gallery-gap: 10px;
   --thumb: 44px;
 
@@ -126,7 +126,7 @@
   --hero-origin: 49% 42%;
   --hero-focus: center 42%;
   --hero-row-gap: 1vh;
-  --hero-type: min(13vw, 20vh);
+  --hero-type: min(13vw, calc(20vh / var(--z, 1)));
 
   --z-canvas: 1;
   --z-content: 3;

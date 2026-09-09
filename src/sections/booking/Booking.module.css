@@ -1,6 +1,6 @@
 .section {
   padding: var(--s2) var(--gx) var(--s1);
-  min-height: 100svh;
+  min-height: calc(100svh / var(--z, 1));
   display: flex;
   flex-direction: column;
   position: relative;
@@ -73,7 +73,7 @@
   position: absolute;
   right: calc(-1 * var(--gx) / 2);
   bottom: 8%;
-  height: min(52vh, 540px);
+  height: min(calc(52vh / var(--z, 1)), 540px);
   width: auto;
   aspect-ratio: 914 / 1313;
   background: var(--ink);

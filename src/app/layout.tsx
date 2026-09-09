@@ -5,6 +5,7 @@ import { ReactTempus } from 'tempus/react';
 import { GsapRuntime } from '@/components/effects/gsap-runtime';
 import { LoopGate } from '@/components/effects/loop-gate';
 import { SmoothScroll } from '@/components/effects/smooth-scroll';
+import { ViewportScale } from '@/components/effects/viewport-scale';
 import { SITE } from '@/lib/site';
 import { structuredData } from '@/lib/structured-data';
 import { fontVariables } from '@/styles/fonts';
@@ -72,6 +73,7 @@ export default function RootLayout({ children }: LayoutProps<'/'>) {
         </Script>
         {/* patch routes third-party requestAnimationFrame calls into the same loop */}
         <ReactTempus patch />
+        <ViewportScale />
         <GsapRuntime />
         <LoopGate />
         <SmoothScroll>{children}</SmoothScroll>
