@@ -13,7 +13,7 @@
     "format": "oxfmt",
     "format:check": "oxfmt --check",
     "typecheck": "rm -rf .next/types .next/dev/types && next typegen && tsc --noEmit",
-    "prepare": "husky"
+    "prepare": "husky || true"
   },
   "dependencies": {
     "@gsap/react": "2.1.2",
@@ -39,7 +39,7 @@
     "typescript": "7.0.2"
   },
   "engines": {
-    "node": ">=24"
+    "node": "24.x"
   },
   "packageManager": "pnpm@10.15.0"
 }
