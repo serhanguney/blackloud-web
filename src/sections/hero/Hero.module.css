@@ -18,7 +18,9 @@
   object-fit: cover;
   object-position: var(--hero-focus);
   filter: grayscale(1) contrast(1.1);
-  transform: scale(var(--hero-scale)) translateY(var(--hero-lift));
+  /* The frame loop writes --hero-shift only. Keeping the scale here is what
+     lets the mobile query below reframe the shot without JS knowing. */
+  transform: scale(var(--hero-scale)) translateY(calc(var(--hero-lift) + var(--hero-shift, 0px)));
   transform-origin: var(--hero-origin);
   will-change: transform;
 }
@@ -143,5 +145,16 @@
 
   .socials {
     justify-content: flex-start;
+  }
+}
+
+/* At 1.7 on a tall, narrow viewport the cover fit has already cropped to the
+   middle quarter of a 16:9 frame, and the extra scale then fills the screen
+   with one shoulder. Reframe rather than magnify. */
+@media (max-width: 840px) {
+  .hero {
+    --hero-scale: 1;
+    --hero-lift: 0%;
+    --hero-origin: 50% 30%;
   }
 }

@@ -28,11 +28,9 @@ export const REVEAL = {
 } as const;
 
 export const HERO = {
-  /* Mirrors --hero-scale and --hero-lift in tokens.css, which set the resting
-     state this overwrites every frame. Change both together. */
-  scale: 1.7,
-  lift: '-6%',
-  /* Background and cutout drift together at this fraction of scroll. */
+  /* Background and cutout drift together at this fraction of scroll. The frame
+     loop writes --hero-shift; the framing itself stays in CSS so the mobile
+     query can reframe it. */
   parallax: 0.16,
   /* Pointer lerp, and how far the marquee rows and portrait travel with it. */
   lerp: 0.06,

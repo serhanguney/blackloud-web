@@ -62,9 +62,9 @@ export const HeroMotion = () => {
       targets.current ??= collect();
       const { parallax, rows } = targets.current;
 
-      const shift = (y * HERO.parallax).toFixed(2);
+      const shift = `${(y * HERO.parallax).toFixed(2)}px`;
       for (const el of parallax) {
-        el.style.transform = `scale(${HERO.scale}) translateY(calc(${HERO.lift} + ${shift}px))`;
+        el.style.setProperty('--hero-shift', shift);
       }
 
       const p = pointer.current;

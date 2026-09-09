@@ -44,7 +44,7 @@ export const Hero = () => (
         aria-hidden="true"
         fill
         priority
-        sizes="100vw"
+        sizes="170vw"
         className={styles.plate}
       />
       <div className={styles.scrim} />
@@ -75,7 +75,7 @@ export const Hero = () => (
       aria-hidden="true"
       fill
       priority
-      sizes="100vw"
+      sizes="170vw"
       className={styles.cutout}
     />
 
