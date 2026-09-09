@@ -1,0 +1,122 @@
+.list {
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  position: relative;
+  display: flex;
+  align-items: baseline;
+  gap: clamp(10px, 1.5vw, 22px);
+  width: 100%;
+  background: none;
+  border: 0;
+  border-top: var(--border-width) solid var(--line);
+  padding: var(--s0) 0;
+  color: var(--ink);
+  cursor: pointer;
+  text-align: left;
+  font-family: var(--font-display);
+  min-width: 0;
+  transition: color var(--duration-color) ease;
+}
+
+.row:hover,
+.row:focus-visible,
+.row[aria-pressed='true'] {
+  color: var(--acc);
+}
+
+.number {
+  flex: none;
+  font-family: var(--font-mono);
+  font-size: var(--t-micro);
+  letter-spacing: var(--tracking-meta);
+  color: var(--mut);
+}
+
+.title {
+  font-weight: var(--weight-black);
+  font-stretch: var(--wdth-display);
+  font-size: var(--t-h3);
+  line-height: var(--leading-h3);
+  letter-spacing: var(--tracking-h3);
+  text-transform: uppercase;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
+}
+
+.meta {
+  flex: none;
+  margin-left: auto;
+  font-family: var(--font-mono);
+  font-size: var(--t-nano);
+  letter-spacing: var(--tracking-meta);
+  text-transform: uppercase;
+  color: var(--mut);
+}
+
+/* The three bars only exist while a preview is playing. */
+.eq {
+  display: flex;
+  align-items: flex-end;
+  gap: 2px;
+  height: 16px;
+  flex: none;
+}
+
+.bar {
+  width: 3px;
+  height: 16px;
+  background: var(--acc);
+  transform-origin: bottom;
+  animation: eq var(--duration-eq) ease-in-out infinite;
+}
+
+.bar:nth-child(2) {
+  animation-delay: 200ms;
+}
+.bar:nth-child(3) {
+  animation-delay: 400ms;
+}
+
+.progress {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: var(--rule-height);
+  width: 0;
+  background: var(--acc);
+}
+
+/* Only the playing row eases; a reset has to snap or it rewinds visibly. */
+.progress[data-current='true'] {
+  transition: width var(--duration-progress) linear;
+}
+
+.hover:hover .nudgeIn,
+.hover:focus-visible .nudgeIn {
+  transform: translateX(14px);
+}
+
+.hover:hover .nudgeOut,
+.hover:focus-visible .nudgeOut {
+  transform: translateX(-10px);
+}
+
+.nudgeIn,
+.nudgeOut {
+  transition: transform var(--duration-nudge) var(--ease-out-expo);
+}
+
+@keyframes eq {
+  0%,
+  100% {
+    transform: scaleY(0.25);
+  }
+  50% {
+    transform: scaleY(1);
+  }
+}
