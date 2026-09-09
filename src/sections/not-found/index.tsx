@@ -1,14 +1,14 @@
 import Link from 'next/link';
 
-import { Section } from '@/components/layout/section';
+import { Prose } from '@/components/ui/prose';
 
 import styles from './NotFound.module.css';
 
 export const NotFound = () => (
-  <Section as="main" tone="invert" spacing="none" viewport className={styles.section}>
+  <main className={styles.section}>
     <h1 className={styles.code}>404</h1>
-    <p className={styles.note}>
+    <Prose tone="muted">
       That page does not exist. <Link href="/">Back to the start</Link>.
-    </p>
-  </Section>
+    </Prose>
+  </main>
 );

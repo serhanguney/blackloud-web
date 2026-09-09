@@ -1,0 +1,16 @@
+.prose {
+  margin: 0;
+  font-size: var(--t-body);
+  line-height: var(--leading-body);
+  text-wrap: pretty;
+  max-width: var(--measure-body);
+}
+
+.muted {
+  color: var(--mut);
+}
+
+/* Names and labels lifted out of a muted paragraph. */
+.strong {
+  color: var(--ink);
+}
