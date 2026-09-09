@@ -7,7 +7,7 @@ import { SOCIALS } from '@/lib/socials';
 import styles from './SiteFooter.module.css';
 
 export const SiteFooter = () => (
-  <Reveal>
+  <Reveal pace="edge">
     <Mono as="footer" size="nanoPlus" tracking="social" className={styles.footer}>
       <div className={styles.wordmark}>
         <LogoGlyph size="footer" />

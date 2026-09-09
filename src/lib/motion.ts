@@ -25,6 +25,10 @@ export const REVEAL = {
      viewport block that is roughly this much of the way up the fold. */
   start: 'top 88%',
   startMobile: 'top 96%',
+  /* Anything pinned to the foot of the last section never travels far enough to
+     clear the normal start, because the page stops scrolling first. On a tall
+     display it would sit at opacity 0 forever. */
+  startEdge: 'top 100%',
 } as const;
 
 export const HERO = {
