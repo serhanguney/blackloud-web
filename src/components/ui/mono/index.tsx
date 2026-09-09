@@ -5,10 +5,11 @@ import { cn } from '@/lib/cn';
 import styles from './Mono.module.css';
 
 type Size = 'pico' | 'nano' | 'nanoPlus' | 'micro' | 'small';
-type Tracking = 'micro' | 'meta' | 'social' | 'label';
+type Tracking = 'none' | 'micro' | 'meta' | 'social' | 'label';
 type Tone = 'default' | 'muted' | 'accent';
 
 const trackingClass: Record<Tracking, string | undefined> = {
+  none: styles.trackNone,
   micro: styles.trackMicro,
   meta: styles.trackMeta,
   social: styles.trackSocial,
