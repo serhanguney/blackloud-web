@@ -135,7 +135,6 @@
   --hero-type: min(13vw, calc(20vh / var(--z, 1)));
 
   --z-canvas: 1;
-  --z-glow: 45;
   --z-content: 3;
   --z-header: 50;
   --z-skip: 300;
