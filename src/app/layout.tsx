@@ -5,7 +5,6 @@ import { ReactTempus } from 'tempus/react';
 import { GsapRuntime } from '@/components/effects/gsap-runtime';
 import { LoopGate } from '@/components/effects/loop-gate';
 import { SmoothScroll } from '@/components/effects/smooth-scroll';
-import { ViewportScale } from '@/components/effects/viewport-scale';
 import { SITE } from '@/lib/site';
 import { structuredData } from '@/lib/structured-data';
 import { fontVariables } from '@/styles/fonts';
@@ -20,9 +19,18 @@ export const metadata: Metadata = {
   creator: SITE.name,
   publisher: SITE.name,
   alternates: { canonical: '/' },
-  keywords: ['TODO', 'keywords', 'from', 'the', 'source', 'site'],
+  keywords: [
+    'Blackloud',
+    'melodic house',
+    'melodic techno',
+    'indie dance',
+    'DJ Prague',
+    'music producer Prague',
+    'Diynamic',
+    'DJ booking',
+  ],
   openGraph: {
-    type: 'website',
+    type: 'profile',
     url: SITE.url,
     siteName: SITE.name,
     title: SITE.title,
@@ -42,8 +50,8 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: '#161616',
-  colorScheme: 'light',
+  themeColor: '#0c0c0c',
+  colorScheme: 'dark',
 };
 
 export default function RootLayout({ children }: LayoutProps<'/'>) {
@@ -61,7 +69,6 @@ export default function RootLayout({ children }: LayoutProps<'/'>) {
         </Script>
         {/* patch routes third-party requestAnimationFrame calls into the same loop */}
         <ReactTempus patch />
-        <ViewportScale />
         <GsapRuntime />
         <LoopGate />
         <SmoothScroll>{children}</SmoothScroll>
