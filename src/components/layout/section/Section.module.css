@@ -1,0 +1,27 @@
+.section {
+  position: relative;
+  background: var(--surface);
+  color: var(--text);
+}
+
+.raised {
+  background: var(--surface-raised);
+}
+
+.gutter {
+  padding-inline: var(--space-gutter);
+}
+
+.block {
+  padding-block: var(--space-block);
+}
+
+.section-spacing {
+  padding-block: var(--space-section);
+}
+
+.viewport {
+  min-height: calc(100svh / var(--z, 1));
+  display: flex;
+  flex-direction: column;
+}
