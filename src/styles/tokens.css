@@ -70,6 +70,22 @@
   --tracking-social: 0.14em;
   --tracking-label: 0.16em;
 
+  /* Detail gaps, below the --s0 floor of 16px. These sit between elements
+     inside one component rather than between blocks, so they are fixed. */
+  --d0: 6px;
+  --d1: 10px;
+  --d2: 12px;
+  --d3: 14px;
+  --d4: 16px;
+  --d5: 18px;
+  --d6: 20px;
+
+  --surface-video: #111110;
+
+  --gallery-height: clamp(15rem, 42vh, 28.75rem);
+  --gallery-gap: 10px;
+  --thumb: 44px;
+
   --measure-statement: 22ch;
   --measure-statement-wide: 24ch;
   --measure-body: 44ch;
