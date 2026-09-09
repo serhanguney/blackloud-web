@@ -28,3 +28,20 @@
   text-align: right;
   color: var(--mut);
 }
+
+@media (max-width: 840px) {
+  .footer {
+    gap: var(--s0);
+  }
+
+  .wordmark,
+  .links,
+  .credit {
+    flex: 1 0 100%;
+  }
+
+  /* Right-aligned it reads as stranded once the links wrap onto two lines. */
+  .credit {
+    text-align: left;
+  }
+}

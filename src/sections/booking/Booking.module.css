@@ -64,6 +64,8 @@
 
 .datesLink {
   color: var(--acc);
+  /* Keeps the arrow with the word rather than orphaning it on the next line. */
+  white-space: nowrap;
 }
 
 /* Bleeds off the right edge, behind everything, at five percent. */

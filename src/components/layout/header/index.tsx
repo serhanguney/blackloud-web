@@ -38,6 +38,11 @@ export const Header = () => {
       if (!el) return;
 
       const y = scrollRef.current;
+      // Only reconsider on actual movement. Recomputing every frame would compare
+      // y against itself the moment scrolling stops, and the header would slide
+      // back down on its own instead of staying hidden until you scroll up.
+      if (y === state.last) return;
+
       const frosted = y > NAV.frost;
       const hidden = y > state.last && y > NAV.hide;
 
