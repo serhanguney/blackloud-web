@@ -1,0 +1,145 @@
+.hero {
+  position: relative;
+  height: 100dvh;
+  overflow: hidden;
+}
+
+.backdrop {
+  position: absolute;
+  inset: 0;
+  z-index: var(--z-canvas);
+}
+
+/* Both photographic layers share this framing, and the frame loop overwrites
+   the transform on scroll. The resting values here are what it starts from. */
+.plate {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: var(--hero-focus);
+  filter: grayscale(1) contrast(1.1);
+  transform: scale(var(--hero-scale)) translateY(var(--hero-lift));
+  transform-origin: var(--hero-origin);
+  will-change: transform;
+}
+
+.scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgb(12 12 12 / 0.8),
+    rgb(12 12 12 / 0.45) 45%,
+    rgb(12 12 12 / 0.65)
+  );
+  pointer-events: none;
+}
+
+/* The cut-out head sits above the type, which is what makes the marquee read
+   as passing behind him. */
+.cutout {
+  composes: plate;
+  position: absolute;
+  inset: 0;
+  z-index: var(--z-content);
+  pointer-events: none;
+  animation: fadeIn var(--duration-intro) ease 300ms both;
+}
+
+.stack {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--hero-row-gap);
+  pointer-events: none;
+  user-select: none;
+}
+
+.shift {
+  will-change: transform;
+}
+
+.row {
+  white-space: nowrap;
+  font-weight: var(--weight-black);
+  font-stretch: var(--wdth-display);
+  font-size: var(--hero-type);
+  line-height: var(--leading-marquee);
+  letter-spacing: var(--tracking-marquee);
+  text-transform: uppercase;
+}
+
+.rowBack {
+  animation: fadeIn var(--duration-intro) ease 100ms both;
+}
+.rowMid {
+  animation: fadeIn var(--duration-intro) ease 250ms both;
+}
+.rowFore {
+  animation: fadeIn var(--duration-intro) ease 400ms both;
+}
+
+/* The outline rows are the same word set with no fill, so the solid row in the
+   middle reads as the only one in focus. */
+.outline {
+  color: transparent;
+  -webkit-text-stroke: var(--border-width) var(--line-strong);
+}
+
+.accent {
+  color: var(--acc);
+}
+
+/* One row rather than two absolute corners: at narrow widths the two blocks
+   would otherwise land on top of each other. */
+.foot {
+  position: absolute;
+  left: var(--gx);
+  right: var(--gx);
+  bottom: var(--s0);
+  z-index: var(--z-content);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: var(--s0) var(--s1);
+}
+
+.tagline {
+  color: var(--mut);
+  animation: fadeIn 900ms ease 350ms both;
+}
+
+.taglineStrong {
+  color: var(--ink);
+}
+
+.socials {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 6px 18px;
+  animation: fadeIn 900ms ease 450ms both;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 840px) {
+  .foot {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .socials {
+    justify-content: flex-start;
+  }
+}
