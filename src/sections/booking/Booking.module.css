@@ -1,0 +1,106 @@
+.section {
+  padding: var(--s2) var(--gx) var(--s1);
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--d0) var(--s0);
+  color: var(--mut);
+}
+
+.body {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  gap: var(--s2) var(--s3);
+  margin: auto 0;
+  padding: var(--s2) 0;
+}
+
+.copy {
+  flex: 1.618 1 380px;
+  min-width: 0;
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: var(--s1);
+}
+
+.quiet {
+  color: var(--mut);
+}
+
+/* The address is the largest interactive element on the page by a distance,
+   which is the point: it is the only thing being asked for. */
+.mail {
+  display: block;
+  margin-top: auto;
+  width: max-content;
+  max-width: 100%;
+  font-weight: var(--weight-black);
+  font-stretch: var(--wdth-display);
+  font-size: var(--t-mail);
+  line-height: var(--leading-mail);
+  letter-spacing: var(--tracking-mail);
+  text-transform: uppercase;
+}
+
+.at {
+  color: var(--acc);
+}
+
+.dates {
+  color: var(--mut);
+}
+
+.datesLink {
+  color: var(--acc);
+}
+
+/* Bleeds off the right edge, behind everything, at five percent. */
+.watermark {
+  position: absolute;
+  right: calc(-1 * var(--gx) / 2);
+  bottom: 8%;
+  height: min(52vh, 540px);
+  width: auto;
+  aspect-ratio: 914 / 1313;
+  background: var(--ink);
+  opacity: var(--watermark);
+  -webkit-mask: url('/logo.svg') center / contain no-repeat;
+  mask: url('/logo.svg') center / contain no-repeat;
+  pointer-events: none;
+  user-select: none;
+}
+
+.portrait {
+  flex: 1 1 260px;
+  min-width: 0;
+  margin: 0 0 0 auto;
+  position: relative;
+  aspect-ratio: 4 / 5;
+  max-width: 420px;
+}
+
+.portraitImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+  filter: grayscale(1) contrast(1.08);
+}
+
+.stamp {
+  position: absolute;
+  left: var(--d1);
+  bottom: var(--d1);
+}
