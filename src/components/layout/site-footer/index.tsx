@@ -9,9 +9,19 @@ import styles from './SiteFooter.module.css';
 export const SiteFooter = () => (
   <Reveal pace="edge">
     <Mono as="footer" size="nanoPlus" tracking="social" className={styles.footer}>
-      <div className={styles.wordmark}>
+      {/* The colophon line: who, where, and who built it. A credit on its own
+          row read as a third element competing with the nav. */}
+      <div className={styles.colophon}>
         <LogoGlyph size="footer" />
-        {SITE.legalName} &middot; {SITE.locality}, {SITE.country}
+        <span>
+          {SITE.legalName} &middot; {SITE.locality}, {SITE.country}
+        </span>
+        <span className={styles.credit}>
+          &middot; Site by{' '}
+          <a href="https://www.jonasarden.com" target="_blank" rel="noopener noreferrer">
+            Jonas Arden
+          </a>
+        </span>
       </div>
 
       <nav aria-label="Elsewhere" className={styles.links}>
@@ -21,13 +31,6 @@ export const SiteFooter = () => (
           </a>
         ))}
       </nav>
-
-      <div className={styles.credit}>
-        Site by{' '}
-        <a href="https://www.jonasarden.com" target="_blank" rel="noopener noreferrer">
-          Jonas Arden
-        </a>
-      </div>
     </Mono>
   </Reveal>
 );

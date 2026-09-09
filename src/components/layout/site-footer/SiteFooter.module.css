@@ -2,6 +2,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  align-items: baseline;
   gap: var(--d1) var(--s0);
   margin-top: var(--s2);
   border-top: var(--border-width) solid var(--line);
@@ -9,9 +10,10 @@
   color: var(--mut);
 }
 
-.wordmark {
+.colophon {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: var(--d1);
 }
 
@@ -22,11 +24,10 @@
   color: var(--ink);
 }
 
-/* Its own line at the foot, so it credits without competing with the nav. */
+/* Sits a step back from the wordmark it follows, so the line reads as one
+   colophon rather than two competing labels. */
 .credit {
-  flex: 1 0 100%;
-  text-align: right;
-  color: var(--mut);
+  opacity: 0.72;
 }
 
 @media (max-width: 840px) {
@@ -34,14 +35,8 @@
     gap: var(--s0);
   }
 
-  .wordmark,
-  .links,
-  .credit {
+  .colophon,
+  .links {
     flex: 1 0 100%;
-  }
-
-  /* Right-aligned it reads as stranded once the links wrap onto two lines. */
-  .credit {
-    text-align: left;
   }
 }
