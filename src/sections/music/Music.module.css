@@ -110,3 +110,12 @@
   color: var(--mut);
   flex: none;
 }
+
+@media (max-width: 840px) {
+  /* Beside the heading the index wraps to two lines; under it, it reads. */
+  .head {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--d1);
+  }
+}

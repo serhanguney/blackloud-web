@@ -100,7 +100,7 @@ export const Music = () => (
                 className={styles.cover}
               />
               <span className={styles.mixTitle}>{mix.title}</span>
-              <Mono as="span" size="small" tracking="meta" className={styles.year}>
+              <Mono as="span" size="small" tracking="none" className={styles.year}>
                 {mix.year} <Arrow size={10} />
               </Mono>
             </ExternalLink>

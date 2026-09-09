@@ -120,3 +120,24 @@
     transform: scaleY(1);
   }
 }
+
+/* Below the breakpoint the meta was squeezing the title into an ellipsis. The
+   title is the content here, so it takes the line and the meta drops beneath. */
+@media (max-width: 840px) {
+  .row {
+    flex-wrap: wrap;
+    align-items: baseline;
+  }
+
+  .title {
+    white-space: normal;
+    overflow: visible;
+    flex: 1 1 auto;
+  }
+
+  .meta {
+    flex: 1 0 100%;
+    margin: var(--d0) 0 0;
+    padding-left: calc(var(--t-micro) + clamp(10px, 1.5vw, 22px));
+  }
+}
