@@ -33,7 +33,9 @@ export const Booking = () => (
           </Statement>
         </Reveal>
 
-        <Reveal>
+        {/* The auto margin has to sit on the flex item, which is this wrapper and
+            not the anchor, or space-between strands the address mid-column. */}
+        <Reveal className={styles.mailRow}>
           <a href={`mailto:${SITE.email}`} data-plain className={styles.mail}>
             {mailbox}
             <span className={styles.at}>@</span>
@@ -60,7 +62,7 @@ export const Booking = () => (
           alt={`${SITE.name} in the studio`}
           width={1080}
           height={1080}
-          sizes="(max-width: 840px) 90vw, 420px"
+          sizes="(max-width: 900px) 100vw, 420px"
           className={styles.portraitImage}
         />
         <figcaption className={styles.stamp}>

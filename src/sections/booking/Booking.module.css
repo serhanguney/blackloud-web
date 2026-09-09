@@ -41,9 +41,12 @@
 
 /* The address is the largest interactive element on the page by a distance,
    which is the point: it is the only thing being asked for. */
+.mailRow {
+  margin-top: auto;
+}
+
 .mail {
   display: block;
-  margin-top: auto;
   width: max-content;
   max-width: 100%;
   font-weight: var(--weight-black);
@@ -104,4 +107,26 @@
   position: absolute;
   left: var(--d1);
   bottom: var(--d1);
+}
+
+/* Around 900px the copy and the portrait stop fitting side by side and wrap.
+   Once stacked there is no second column to balance against, so the portrait
+   takes the full measure rather than sitting at 420px with dead space beside
+   it. The height cap stops it becoming a monolith on a wide tablet, and cover
+   absorbs the difference. */
+@media (max-width: 900px) {
+  /* auto margins centre the block against a full-height section, which on a
+     phone leaves a dead band between the portrait and the footer. Stacked, the
+     content just flows and the footer follows it. */
+  .body {
+    margin: 0;
+    padding: var(--s2) 0 0;
+  }
+
+  .portrait {
+    margin-left: 0;
+    width: 100%;
+    max-width: none;
+    max-height: calc(70svh / var(--z, 1));
+  }
 }
