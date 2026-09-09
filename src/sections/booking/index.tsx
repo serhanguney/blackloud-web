@@ -59,9 +59,9 @@ export const Booking = () => (
       <Reveal as="figure" className={styles.portrait}>
         <Image
           src="/booking-portrait.jpg"
-          alt={`${SITE.name} in the studio`}
-          width={1080}
-          height={1080}
+          alt={`Portrait of ${SITE.name}`}
+          width={1125}
+          height={1406}
           sizes="(max-width: 900px) 100vw, 420px"
           className={styles.portraitImage}
         />
