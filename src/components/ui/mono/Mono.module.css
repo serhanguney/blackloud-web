@@ -1,0 +1,49 @@
+.mono {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-weight: var(--weight-regular);
+  text-transform: uppercase;
+  line-height: normal;
+}
+
+.pico {
+  font-size: var(--t-pico);
+}
+.nano {
+  font-size: var(--t-nano);
+}
+.nanoPlus {
+  font-size: var(--t-nano-plus);
+}
+.micro {
+  font-size: var(--t-micro);
+}
+.small {
+  font-size: var(--t-small);
+  text-transform: none;
+}
+
+.trackMicro {
+  letter-spacing: var(--tracking-micro);
+}
+.trackMeta {
+  letter-spacing: var(--tracking-meta);
+}
+.trackSocial {
+  letter-spacing: var(--tracking-social);
+}
+.trackLabel {
+  letter-spacing: var(--tracking-label);
+}
+
+.muted {
+  color: var(--mut);
+}
+.accent {
+  color: var(--acc);
+}
+
+/* The tagline is the one mono block that runs to two lines. */
+.leaded {
+  line-height: var(--leading-micro);
+}

@@ -1,0 +1,16 @@
+/* The speaking voice: a narrower Archivo cut than the headings, set to read. */
+.statement {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: var(--weight-bold);
+  font-stretch: var(--wdth-statement);
+  font-size: var(--t-h3);
+  line-height: var(--leading-statement);
+  letter-spacing: var(--tracking-h3);
+  text-wrap: balance;
+  max-width: var(--measure-statement);
+}
+
+.wide {
+  max-width: var(--measure-statement-wide);
+}
