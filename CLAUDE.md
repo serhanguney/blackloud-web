@@ -93,6 +93,20 @@ Consequences that are easy to undo by accident:
   scrubbing and pinning.
 - Lenis is disabled entirely under `prefers-reduced-motion`.
 
+## CSS traps
+
+- **Never hand-write a vendor prefix that has a standard property.** Next builds CSS through
+  lightningcss, which adds prefixes from its own targets. Given both, it can keep only the
+  prefixed one and drop the standard property. That is what happened to the header frost:
+  `-webkit-backdrop-filter` shipped, `backdrop-filter` did not, and Chrome rendered no blur with
+  no error anywhere. Write the standard property alone and let the build prefix it.
+  `-webkit-font-smoothing` and `-webkit-text-stroke` are fine, because they have no standard form.
+- **`animation` is a shorthand.** Two classes on one element, each setting `animation`, means the
+  later one wins outright rather than composing. The hero marquee lost its drift this way when a
+  fade was added alongside it. Put the second animation on a wrapper.
+- After a change to anything prefixed or animated, check what actually shipped
+  (`grep -o "<prop>:[^;}]*" .next/static/chunks/*.css`) rather than trusting the source.
+
 ## Design tokens
 
 - **Never hard-code a colour, size, space or easing.** Use the tokens in `src/styles/tokens.css`.
