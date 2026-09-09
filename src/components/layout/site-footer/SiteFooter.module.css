@@ -1,0 +1,23 @@
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--d1) var(--s0);
+  margin-top: var(--s2);
+  border-top: var(--border-width) solid var(--line);
+  padding-top: var(--s0);
+  color: var(--mut);
+}
+
+.wordmark {
+  display: flex;
+  align-items: center;
+  gap: var(--d1);
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--d0) var(--d5);
+  color: var(--ink);
+}
