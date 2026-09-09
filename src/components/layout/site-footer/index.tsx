@@ -21,6 +21,13 @@ export const SiteFooter = () => (
           </a>
         ))}
       </nav>
+
+      <div className={styles.credit}>
+        Site by{' '}
+        <a href="https://www.jonasarden.com" target="_blank" rel="noopener noreferrer">
+          Jonas Arden
+        </a>
+      </div>
     </Mono>
   </Reveal>
 );

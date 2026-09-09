@@ -21,3 +21,10 @@
   gap: var(--d0) var(--d5);
   color: var(--ink);
 }
+
+/* Its own line at the foot, so it credits without competing with the nav. */
+.credit {
+  flex: 1 0 100%;
+  text-align: right;
+  color: var(--mut);
+}
