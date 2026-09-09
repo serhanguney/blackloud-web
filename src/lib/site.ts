@@ -1,15 +1,23 @@
 export const SITE = {
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.blackloud.com',
+  /* TODO confirm the live domain. Taken from the booking address. */
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.blackloudmusic.com',
   name: 'Blackloud',
-  role: 'TODO one-line role or category',
-  title: 'TODO Blackloud - what it is',
-  description: 'TODO one sentence, under 160 characters, that carries the entity and the offer.',
-  email: 'TODO@blackloud.com',
-  /** sameAs: the statement that these accounts and this site are one entity. */
-  profiles: [] as string[],
+  legalName: 'Blackloud®',
+  role: 'Melodic house and techno producer and DJ',
+  title: 'Blackloud - melodic house and techno producer and DJ in Prague',
+  description:
+    'Melodic house and techno from Prague. Sharp, direct, built for the club. Releases on Diynamic, TAU and SomethingNu, played by Solomun, Camelphat and Pete Tong.',
+  tagline: 'Sharp. Direct. Built for the club.',
+  genreLine: 'Melodic House & Techno · Prague',
+  email: 'booking@blackloudmusic.com',
   locality: 'Prague',
+  region: 'Prague',
   country: 'CZ',
+  timeZone: 'Europe/Prague',
   locale: 'en_GB',
+  genres: ['Melodic House', 'Melodic Techno', 'Indie Dance', 'Electronic'],
+  labels: ['Diynamic', 'TAU', 'SomethingNu'],
+  dates: 'https://www.bandsintown.com/a/56932',
   created: '2026-09-09T18:00:00+02:00',
   updated: '2026-09-09T18:00:00+02:00',
 } as const;
