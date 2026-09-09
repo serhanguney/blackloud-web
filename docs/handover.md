@@ -62,6 +62,10 @@ Safari diverges. Worth ten minutes on a phone before this goes to the client.
 - **Both hero plates are cropped so the subject's centroid sits at 50%** of the frame. Replacing
   either image means re-cropping both together, or the layers desync and the head drifts off
   centre again. The measurement that found this read the alpha channel of the cutout directly.
+- **Content images are WebP; the opengraph card stays JPEG.** Social scrapers still handle WebP
+  inconsistently and that image exists only to be scraped. There is no WebP encoder on the
+  machine (`sips` and ImageIO both read it but cannot write it); the conversions were done with
+  the `sharp` that ships inside Next, resolved out of the pnpm store.
 - **Reading type carries a rem term, display type does not.** See `docs/design-system.md`.
 
 ## How to work here
