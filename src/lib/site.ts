@@ -1,5 +1,4 @@
 export const SITE = {
-  /* TODO confirm the live domain. Taken from the booking address. */
   url: process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.blackloudmusic.com',
   name: 'Blackloud',
   legalName: 'Blackloud®',

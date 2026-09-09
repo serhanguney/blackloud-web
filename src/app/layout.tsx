@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     'DJ booking',
   ],
   openGraph: {
-    type: 'profile',
+    type: 'website',
     url: SITE.url,
     siteName: SITE.name,
     title: SITE.title,
@@ -41,6 +41,9 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: SITE.title,
     description: SITE.description,
+    // Points at the generated opengraph-image route rather than duplicating the
+    // file as twitter-image. X falls back to og:image, but being explicit is free.
+    images: ['/opengraph-image.jpg'],
   },
   robots: {
     index: true,
