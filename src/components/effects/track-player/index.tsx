@@ -10,6 +10,18 @@ import styles from './TrackPlayer.module.css';
 /** Spotify previews are 30 seconds; used only until metadata gives the real one. */
 const FALLBACK_DURATION = 30;
 
+/**
+ * Clearing data-current drops the width transition in the same style
+ * recalculation as the width change, so a bar being retired snaps to zero
+ * instead of visibly rewinding. React sets the attribute correctly on its next
+ * render either way.
+ */
+const snapToZero = (bar: HTMLSpanElement | null | undefined) => {
+  if (!bar) return;
+  bar.dataset.current = 'false';
+  bar.style.width = '0%';
+};
+
 export const TrackPlayer = () => {
   const [current, setCurrent] = useState<string | null>(null);
   const [playing, setPlaying] = useState(false);
@@ -35,8 +47,7 @@ export const TrackPlayer = () => {
     const onEnded = () => {
       setPlaying(false);
       const id = audio.dataset.trackId;
-      const bar = id ? bars.current.get(id) : undefined;
-      if (bar) bar.style.width = '0%';
+      snapToZero(id ? bars.current.get(id) : undefined);
     };
 
     audio.addEventListener('timeupdate', onTime);
@@ -63,8 +74,7 @@ export const TrackPlayer = () => {
       }
 
       if (current !== id) {
-        const previous = current ? bars.current.get(current) : undefined;
-        if (previous) previous.style.width = '0%';
+        snapToZero(current ? bars.current.get(current) : undefined);
         audio.src = preview;
         audio.dataset.trackId = id;
       }

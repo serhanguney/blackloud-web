@@ -129,13 +129,23 @@
     align-items: baseline;
   }
 
+  /* No grow, so the auto margin on the meter still has space to push into. */
   .title {
     white-space: normal;
     overflow: visible;
-    flex: 1 1 auto;
+    flex: 0 1 auto;
+  }
+
+  /* Reordered rather than reflowed: the meter stays on the title's line at the
+     right edge, and the release meta drops beneath both. */
+  .eq {
+    order: 2;
+    margin-left: auto;
+    align-self: center;
   }
 
   .meta {
+    order: 3;
     flex: 1 0 100%;
     margin: var(--d0) 0 0;
     padding-left: calc(var(--t-micro) + clamp(10px, 1.5vw, 22px));
