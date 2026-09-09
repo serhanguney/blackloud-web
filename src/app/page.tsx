@@ -1,4 +1,5 @@
 import { HeroMotion } from '@/components/effects/hero-motion';
+import { PointerGlow } from '@/components/effects/pointer-glow';
 import { RevealRuntime } from '@/components/effects/reveal/runtime';
 import { Header } from '@/components/layout/header';
 import { About } from '@/sections/about';
@@ -15,6 +16,7 @@ export default function Home() {
       <Header />
       <HeroMotion />
       <RevealRuntime />
+      <PointerGlow />
       <main id="main">
         <Hero />
         <About />

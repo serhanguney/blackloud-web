@@ -41,6 +41,12 @@ export const HERO = {
   rowTravel: 90,
 } as const;
 
+export const GLOW = {
+  /* The halo trails the core. The gap between the two rates is the effect. */
+  haloLerp: 0.055,
+  coreLerp: 0.14,
+} as const;
+
 export const NAV = {
   /* Past this the header frosts. */
   frost: 40,
