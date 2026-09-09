@@ -48,7 +48,7 @@ export const About = () => (
             alt=""
             width={920}
             height={920}
-            sizes="(max-width: 840px) 60vw, 30vw"
+            sizes="(max-width: 840px) 360px, 460px"
             className={styles.frame}
           />
         ))}
