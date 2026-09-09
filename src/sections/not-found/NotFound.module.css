@@ -1,0 +1,18 @@
+.section {
+  justify-content: center;
+  gap: var(--space-block);
+}
+
+.code {
+  margin: 0;
+  font-size: var(--text-error);
+  line-height: var(--leading-error);
+  letter-spacing: var(--tracking-tighter);
+}
+
+.note {
+  color: var(--text-muted);
+  font-size: var(--text-section-lead);
+  line-height: var(--leading-snug);
+  max-width: var(--measure);
+}
