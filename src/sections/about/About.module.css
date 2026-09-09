@@ -1,0 +1,56 @@
+.section {
+  padding: var(--s5) 0 0;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.index {
+  padding: 0 var(--gx);
+  color: var(--mut);
+  margin-bottom: var(--s2);
+}
+
+/* 1.618 against 1: the statement takes the golden share of the row. */
+.columns {
+  padding: 0 var(--gx);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s2) var(--s3);
+  align-items: flex-start;
+}
+
+.lead {
+  flex: 1.618 1 380px;
+  min-width: 0;
+}
+
+.detail {
+  flex: 1 1 280px;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2em;
+  /* Optically aligns the small copy to the cap height of the statement. */
+  padding-top: 0.35em;
+}
+
+/* Full bleed on purpose: the strip runs past both gutters. */
+.strip {
+  overflow: hidden;
+  margin-top: var(--s3);
+}
+
+.stripInner {
+  display: flex;
+  gap: var(--gallery-gap);
+}
+
+.frame {
+  height: var(--gallery-height);
+  width: var(--gallery-height);
+  aspect-ratio: 1;
+  object-fit: cover;
+  filter: grayscale(1) contrast(1.08);
+}
