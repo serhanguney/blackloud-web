@@ -39,7 +39,7 @@ export const Hero = () => (
     <div className={styles.backdrop}>
       <Image
         data-parallax
-        src="/hero-portrait.jpg"
+        src="/hero-portrait.webp"
         alt=""
         aria-hidden="true"
         fill
@@ -70,7 +70,7 @@ export const Hero = () => (
 
     <Image
       data-parallax
-      src="/hero-cutout.png"
+      src="/hero-cutout.webp"
       alt=""
       aria-hidden="true"
       fill
