@@ -2,6 +2,7 @@ import Image from 'next/image';
 
 import { Reveal } from '@/components/effects/reveal';
 import { TrackPlayer } from '@/components/effects/track-player';
+import { VideoEmbed } from '@/components/effects/video-embed';
 import { Arrow } from '@/components/ui/arrow';
 import { ExternalLink } from '@/components/ui/external-link';
 import { Heading } from '@/components/ui/heading';
@@ -69,16 +70,11 @@ export const Music = () => (
         <Mono as="h3" className={styles.subhead}>
           Featured set
         </Mono>
-        <div className={styles.video}>
-          <iframe
-            src="https://www.youtube.com/embed/2xFbIMPLJ24"
-            title="Blackloud [Diynamic] melodic house and indie dance DJ set"
-            loading="lazy"
-            referrerPolicy="strict-origin-when-cross-origin"
-            allow="accelerometer; autoplay; encrypted-media; picture-in-picture"
-            allowFullScreen
-          />
-        </div>
+        <VideoEmbed
+          id="2xFbIMPLJ24"
+          title="Blackloud [Diynamic] melodic house and indie dance DJ set"
+          poster="/featured-set.jpg"
+        />
         <Mono as="div" size="nano" tracking="meta" className={styles.caption}>
           Melodic House &amp; Indie Dance DJ Set
         </Mono>
