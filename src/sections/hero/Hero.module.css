@@ -16,7 +16,10 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: var(--hero-focus-x, 50%) var(--hero-focus-y, 42%);
+  /* Both plates are cropped so the subject sits at 50% of the frame, and a
+     feature at exactly 50% lands on the box centre at any aspect under cover.
+     So this stays centred: do not add a horizontal nudge, it will over-correct. */
+  object-position: 50% var(--hero-focus-y, 42%);
   filter: grayscale(1) contrast(1.1);
   /* The frame loop writes --hero-shift only. Keeping the scale here is what
      lets the mobile query below reframe the shot without JS knowing. */
@@ -165,7 +168,6 @@
 @media (max-aspect-ratio: 3/2) {
   .hero {
     --hero-scale: 1.3;
-    --hero-focus-x: 38%;
   }
 }
 
@@ -174,9 +176,5 @@
     --hero-scale: 1;
     --hero-lift: 0%;
     --hero-origin: 50% 34%;
-    /* Once the frame is portrait, cover crops hard horizontally and the subject
-       reads left of centre. Lowering the focus shows more of the left of the
-       frame, which pushes the subject right, inside the box and with no seam. */
-    --hero-focus-x: 46%;
   }
 }

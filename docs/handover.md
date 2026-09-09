@@ -62,6 +62,10 @@ Safari diverges. Worth ten minutes on a phone before this goes to the client.
 - **Both hero plates are cropped so the subject's centroid sits at 50%** of the frame. Replacing
   either image means re-cropping both together, or the layers desync and the head drifts off
   centre again. The measurement that found this read the alpha channel of the cutout directly.
+  **Do not add a horizontal `object-position` nudge on top of it.** Under `cover`, a feature at
+  exactly 50% of the image lands on the box centre at every aspect ratio, so the crop alone holds
+  it. Per-breakpoint nudges were tried, and once the crop was right they over-corrected and pushed
+  the head off centre the other way.
 - **Content images are WebP; the opengraph card stays JPEG.** Social scrapers still handle WebP
   inconsistently and that image exists only to be scraped. There is no WebP encoder on the
   machine (`sips` and ImageIO both read it but cannot write it); the conversions were done with

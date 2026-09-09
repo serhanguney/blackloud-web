@@ -128,8 +128,6 @@
      the middle of the screen at every aspect and every scale. Re-crop both
      together if either is ever replaced. */
   --hero-origin: 50% 42%;
-  /* Horizontal focus is per breakpoint, in Hero.module.css: cover crops harder
-     the narrower the frame gets, which walks the subject off centre. */
   --hero-focus-y: 42%;
   --hero-row-gap: 1vh;
   --hero-type: min(13vw, calc(20vh / var(--z, 1)));
