@@ -65,7 +65,7 @@ export default function RootLayout({ children }: LayoutProps<'/'>) {
           }}
         />
         <Script id="scroll-restoration" strategy="beforeInteractive">
-          {`history.scrollRestoration='manual'`}
+          {`history.scrollRestoration='manual';document.documentElement.classList.add('js')`}
         </Script>
         {/* patch routes third-party requestAnimationFrame calls into the same loop */}
         <ReactTempus patch />

@@ -106,6 +106,8 @@
   --duration-progress: 500ms;
 
   --stagger-reveal: 110ms;
+  /* Mirrored by REVEAL.rise in src/lib/motion.ts. */
+  --reveal-rise: 44px;
 
   --drift-back: 40s;
   --drift-mid: 46s;

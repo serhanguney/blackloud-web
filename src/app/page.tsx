@@ -1,4 +1,5 @@
 import { HeroMotion } from '@/components/effects/hero-motion';
+import { RevealRuntime } from '@/components/effects/reveal/runtime';
 import { Header } from '@/components/layout/header';
 import { About } from '@/sections/about';
 import { Booking } from '@/sections/booking';
@@ -13,6 +14,7 @@ export default function Home() {
       </a>
       <Header />
       <HeroMotion />
+      <RevealRuntime />
       <main id="main">
         <Hero />
         <About />

@@ -106,6 +106,20 @@ img {
   white-space: nowrap;
 }
 
+/* Hidden only once we know scripting is on, so a failed bundle leaves the page
+   readable rather than blank. The runtime animates these back in. */
+.js [data-reveal] {
+  opacity: 0;
+  transform: translateY(var(--reveal-rise));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .js [data-reveal] {
+    opacity: 1;
+    transform: none;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
