@@ -15,11 +15,13 @@ const [mailbox, domain] = SITE.email.split('@');
 
 export const Booking = () => (
   <section id="booking" className={styles.section}>
-    <Reveal className={styles.meta}>
-      <span>03 / Booking</span>
-      <span>
-        <PragueTime />
-      </span>
+    <Reveal>
+      <Mono as="div" className={styles.meta}>
+        <span>03 / Booking</span>
+        <span>
+          <PragueTime />
+        </span>
+      </Mono>
     </Reveal>
 
     <div className={styles.body}>
