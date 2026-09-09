@@ -44,7 +44,7 @@ export const About = () => (
         {GALLERY.map((n) => (
           <Image
             key={n}
-            src={`/gallery/0${n}.jpg`}
+            src={`/gallery/0${n}.webp`}
             alt=""
             width={920}
             height={920}

@@ -18,31 +18,31 @@ const MIXTAPES = [
     title: 'Birgit Berlin Live',
     year: '2025',
     href: 'https://soundcloud.com/blackloudmusic/blackloud-birgit-berlin-august-2025',
-    cover: '/mixtapes/birgit-berlin.jpg',
+    cover: '/mixtapes/birgit-berlin.webp',
   },
   {
     title: 'NWDCAST 084',
     year: '2024',
     href: 'https://soundcloud.com/nowwedeep/nwdcast-084-blackloud',
-    cover: '/mixtapes/nwdcast-084.png',
+    cover: '/mixtapes/nwdcast-084.webp',
   },
   {
     title: 'EG After 166',
     year: '2024',
     href: 'https://soundcloud.com/egpodcast/eg-after-166-blackloud',
-    cover: '/mixtapes/eg-after-166.png',
+    cover: '/mixtapes/eg-after-166.webp',
   },
   {
     title: 'Ritmo Futuro 010',
     year: '2023',
     href: 'https://soundcloud.com/ritmofuturo/guestmix-010-blackloud',
-    cover: '/mixtapes/ritmo-futuro-010.png',
+    cover: '/mixtapes/ritmo-futuro-010.webp',
   },
   {
     title: 'Synesthesia Invites 028',
     year: '2023',
     href: 'https://soundcloud.com/synesthesiamusicart/synesthesia-invites-blackloud-028',
-    cover: '/mixtapes/synesthesia-028.jpg',
+    cover: '/mixtapes/synesthesia-028.webp',
   },
 ];
 
@@ -73,7 +73,7 @@ export const Music = () => (
         <VideoEmbed
           id="2xFbIMPLJ24"
           title="Blackloud [Diynamic] melodic house and indie dance DJ set"
-          poster="/featured-set.jpg"
+          poster="/featured-set.webp"
         />
         <Mono as="div" size="nano" tracking="meta" className={styles.caption}>
           Melodic House &amp; Indie Dance DJ Set

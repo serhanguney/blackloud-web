@@ -18,7 +18,7 @@ const artist = {
   description: SITE.description,
   genre: SITE.genres,
   url: SITE.url,
-  image: `${SITE.url}/booking-portrait.jpg`,
+  image: `${SITE.url}/opengraph-image.jpg`,
   email: `mailto:${SITE.email}`,
   sameAs: SOCIALS.map((social) => social.href),
   foundingLocation: { '@type': 'City', name: SITE.locality },

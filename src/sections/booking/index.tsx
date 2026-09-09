@@ -58,7 +58,7 @@ export const Booking = () => (
 
       <Reveal as="figure" className={styles.portrait}>
         <Image
-          src="/booking-portrait.jpg"
+          src="/booking-portrait.webp"
           alt={`Portrait of ${SITE.name}`}
           width={1125}
           height={1406}
