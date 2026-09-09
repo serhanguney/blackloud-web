@@ -1,0 +1,112 @@
+import Image from 'next/image';
+
+import { Reveal } from '@/components/effects/reveal';
+import { TrackPlayer } from '@/components/effects/track-player';
+import { Arrow } from '@/components/ui/arrow';
+import { ExternalLink } from '@/components/ui/external-link';
+import { Heading } from '@/components/ui/heading';
+import { Mono } from '@/components/ui/mono';
+import { SPOTIFY } from '@/lib/socials';
+
+import styles from './Music.module.css';
+
+const ALSO = ['Switch It Up', 'Get This', 'We Hit You', 'GoodGod', 'Male Maluco'];
+
+const MIXTAPES = [
+  {
+    title: 'Birgit Berlin Live',
+    year: '2025',
+    href: 'https://soundcloud.com/blackloudmusic/blackloud-birgit-berlin-august-2025',
+    cover: '/mixtapes/birgit-berlin.jpg',
+  },
+  {
+    title: 'NWDCAST 084',
+    year: '2024',
+    href: 'https://soundcloud.com/nowwedeep/nwdcast-084-blackloud',
+    cover: '/mixtapes/nwdcast-084.png',
+  },
+  {
+    title: 'EG After 166',
+    year: '2024',
+    href: 'https://soundcloud.com/egpodcast/eg-after-166-blackloud',
+    cover: '/mixtapes/eg-after-166.png',
+  },
+  {
+    title: 'Ritmo Futuro 010',
+    year: '2023',
+    href: 'https://soundcloud.com/ritmofuturo/guestmix-010-blackloud',
+    cover: '/mixtapes/ritmo-futuro-010.png',
+  },
+  {
+    title: 'Synesthesia Invites 028',
+    year: '2023',
+    href: 'https://soundcloud.com/synesthesiamusicart/synesthesia-invites-blackloud-028',
+    cover: '/mixtapes/synesthesia-028.jpg',
+  },
+];
+
+export const Music = () => (
+  <section id="music" className={styles.section}>
+    <Reveal className={styles.head}>
+      <Heading>Music</Heading>
+      <Mono tracking="social" className={styles.index}>
+        02 / Selected tracks
+      </Mono>
+    </Reveal>
+
+    <Reveal>
+      <TrackPlayer />
+      <Mono as="div" size="nano" tracking="meta" className={styles.footnote}>
+        <span>Also: {ALSO.join(' · ')}</span>
+        <ExternalLink href={SPOTIFY} className={styles.catalogue} arrow>
+          Full catalogue on Spotify
+        </ExternalLink>
+      </Mono>
+    </Reveal>
+
+    <div className={styles.columns}>
+      <Reveal className={styles.featured}>
+        <Mono as="h3" className={styles.subhead}>
+          Featured set
+        </Mono>
+        <div className={styles.video}>
+          <iframe
+            src="https://www.youtube.com/embed/2xFbIMPLJ24"
+            title="Blackloud [Diynamic] melodic house and indie dance DJ set"
+            loading="lazy"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allow="accelerometer; autoplay; encrypted-media; picture-in-picture"
+            allowFullScreen
+          />
+        </div>
+        <Mono as="div" size="nano" tracking="meta" className={styles.caption}>
+          Melodic House &amp; Indie Dance DJ Set
+        </Mono>
+      </Reveal>
+
+      <Reveal className={styles.mixtapes}>
+        <Mono as="h3" className={styles.subhead}>
+          Mixtapes
+        </Mono>
+        <div className={styles.mixList}>
+          {MIXTAPES.map((mix) => (
+            <ExternalLink key={mix.href} href={mix.href} plain className={styles.mix}>
+              <Image
+                src={mix.cover}
+                alt=""
+                width={88}
+                height={88}
+                sizes="44px"
+                className={styles.cover}
+              />
+              <span className={styles.mixTitle}>{mix.title}</span>
+              <Mono as="span" size="small" tracking="meta" className={styles.year}>
+                {mix.year} <Arrow size={10} />
+              </Mono>
+            </ExternalLink>
+          ))}
+        </div>
+      </Reveal>
+    </div>
+  </section>
+);
