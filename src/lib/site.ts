@@ -1,18 +1,26 @@
 /**
  * Absolute URLs in metadata have to point at a host that actually answers, or a
  * scraper fetching og:image gets a 404 and falls back to whatever image it can
- * find on the page. Until the custom domain is attached, Vercel's own
- * production URL is the one that resolves.
+ * find on the page. That is exactly what happened while this pointed at a
+ * domain that was not attached yet.
+ *
+ * Order: an explicit override, then whatever host Vercel is serving as
+ * production, then the interim deployment. Attaching the real domain in Vercel
+ * makes VERCEL_PROJECT_PRODUCTION_URL become it, so canonical, og:url, the
+ * sitemap and robots all follow with no code change. INTERIM is only the
+ * last resort for a build running outside Vercel.
  *
  * Server only. Nothing on the client reads SITE.url, and VERCEL_* is not
  * inlined into the client bundle.
  */
+const INTERIM = 'https://blackloud-web.vercel.app';
+
 const origin = () => {
   if (process.env.NEXT_PUBLIC_SITE_URL) return process.env.NEXT_PUBLIC_SITE_URL;
   if (process.env.VERCEL_PROJECT_PRODUCTION_URL) {
     return `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`;
   }
-  return 'https://www.blackloudmusic.com';
+  return INTERIM;
 };
 
 export const SITE = {

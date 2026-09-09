@@ -1,0 +1,74 @@
+# Handover
+
+State as of 2026-09-09. Read `CLAUDE.md` first, then `docs/design-system.md` and
+`docs/components.md`.
+
+## Where things stand
+
+Built and deployed. Four sections in page order: hero, about, music, booking, plus a 404. The
+design canvas it was rebuilt from lives in `source/`, which is excluded locally via
+`.git/info/exclude` and is deliberately not in the repository.
+
+Lighthouse on the production build: 100 accessibility, 100 best practices, 100 SEO, 100 agentic
+browsing. Re-run it after content changes rather than trusting it stays there.
+
+## The domain, and the one thing to do at handover
+
+**Currently every absolute URL points at `https://blackloud-web.vercel.app`.** That is deliberate:
+metadata has to name a host that answers. Pointing it at the real domain before that domain was
+attached is what produced a broken share card, because scrapers fetched a 404 for `og:image` and
+fell back to grabbing the hero portrait off the page.
+
+`SITE.url` in `src/lib/site.ts` resolves in this order:
+
+1. `NEXT_PUBLIC_SITE_URL`, if set
+2. `VERCEL_PROJECT_PRODUCTION_URL`, which Vercel sets to the project's production host
+3. `INTERIM`, the vercel.app deployment, for builds outside Vercel
+
+So **attaching the real domain in Vercel is the whole switch**. That makes
+`VERCEL_PROJECT_PRODUCTION_URL` the custom domain, and canonical, `og:url`, `og:image`,
+`twitter:image`, `robots.txt` and `sitemap.xml` all follow with no code change. Update `INTERIM`
+in the same pass so a local build agrees.
+
+Do that **before** submitting the sitemap, or Search Console indexes the vercel.app host as
+canonical.
+
+## Then, off-site, and only Jonas can
+
+- Submit the sitemap to **Google Search Console** and **Bing Webmaster Tools**. Bing matters
+  because ChatGPT search reads that index.
+- Make the bio wording consistent across Spotify, Beatport, RA and Instagram. The JSON-LD asserts
+  through `sameAs` that ten profiles and this site are one act; an inconsistent role string
+  weakens the entity match that assertion just made.
+- Site verification meta tags need his codes. Two lines in `app/layout.tsx` when they arrive.
+
+`public/llms.txt` is close to decorative: Google has said it does not support it, and OpenAI's
+crawler docs reference only `robots.txt`. It stays because it is free and Lighthouse's
+agentic-browsing audit checks for it. What actually drives AI citation is the entity work above.
+
+## Not verified
+
+**iOS Safari on a real device.** Everything was measured in Chrome at 390, 504, 768, 1024, 1440,
+1728 and 2560. The hero leans on `dvh`, `svh` and `backdrop-filter`, which is precisely where
+Safari diverges. Worth ten minutes on a phone before this goes to the client.
+
+## Deliberate, do not "fix" back
+
+- **No pointer glow.** Built, reviewed, removed on request.
+- **The YouTube player sits behind a poster** and only loads on click. Embedding it directly costs
+  about a megabyte of script on every page load and sets Google's third-party cookies, which took
+  best practices to 77. `youtube-nocookie.com` alone did not fix it; the player still pulls a
+  script from `www.google.com`.
+- **Both hero plates are cropped so the subject's centroid sits at 50%** of the frame. Replacing
+  either image means re-cropping both together, or the layers desync and the head drifts off
+  centre again. The measurement that found this read the alpha channel of the cutout directly.
+- **Reading type carries a rem term, display type does not.** See `docs/design-system.md`.
+
+## How to work here
+
+Verify by measuring in a browser, not by reading source. On this project the source was wrong
+about the header frost, the marquee drift and the hero framing, and each was only caught by
+measuring the rendered page or the shipped CSS.
+
+Run `pnpm lint && pnpm lint:types && pnpm format:check && pnpm typecheck && pnpm build` before
+committing. Delete screenshots and `.playwright-mcp/` before staging.
