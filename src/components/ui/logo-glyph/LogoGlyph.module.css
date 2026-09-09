@@ -1,7 +1,6 @@
 .glyph {
   display: inline-block;
   background: currentcolor;
-  -webkit-mask: url('/logo.svg') center / contain no-repeat;
   mask: url('/logo.svg') center / contain no-repeat;
 }
 

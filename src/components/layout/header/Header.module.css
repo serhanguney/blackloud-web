@@ -26,8 +26,10 @@
 
 .header[data-frosted='true'] {
   background: var(--veil);
+  /* Do not hand-write the -webkit- prefix here. Lightningcss adds prefixes from
+     its targets, and given both it drops the standard property and ships only
+     the prefixed one, which Chrome then ignores. The frost silently vanishes. */
   backdrop-filter: blur(var(--blur-veil));
-  -webkit-backdrop-filter: blur(var(--blur-veil));
   border-bottom-color: var(--line-faint);
 }
 

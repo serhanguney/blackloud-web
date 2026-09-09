@@ -76,7 +76,6 @@
   aspect-ratio: 914 / 1313;
   background: var(--ink);
   opacity: var(--watermark);
-  -webkit-mask: url('/logo.svg') center / contain no-repeat;
   mask: url('/logo.svg') center / contain no-repeat;
   pointer-events: none;
   user-select: none;
