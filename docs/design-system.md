@@ -46,8 +46,20 @@ Archivo is loaded with its `wdth` axis, which is the point: the display cuts run
 separates the two voices, not a second family.
 
 Golden ratio, base 17px: **17 / 27.5 / 44.5 / 72 / 116**, as `--t-body`, `--t-lead`, `--t-h3`,
-`--t-h2`, `--t-display`. Authored in px in the canvas, expressed here in `rem` so browser zoom
-keeps working, which a px clamp does not.
+`--t-h2`, `--t-display`. Authored in px on the canvas, expressed here in `rem`.
+
+The scale is split, the same way the portfolio project splits it:
+
+- **Reading sizes** (`--t-body`, `--t-lead`, `--t-h3`) keep a `rem` term in the middle of the
+  clamp, anchored 390 to 1728. A `vw`-only middle stops responding to browser zoom, which fails
+  WCAG 1.4.4. Each still resolves to its authored value at both ends of that range.
+- **Display sizes** (`--t-h2`, `--t-display`, `--t-mail`) stay purely viewport-driven. They are a
+  graphic element rather than text anyone reads at length, and pinning them to a rem term would
+  break the composition. The portfolio does the same with `--text-display-l`.
+
+The cost of the split is that reading sizes now grow smoothly across the range rather than sitting
+flat and stepping late, so body copy is a little larger between roughly 700px and 1400px than the
+canvas showed. That is a deliberate trade for zoom support.
 
 ## Spacing
 

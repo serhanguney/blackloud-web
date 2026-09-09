@@ -15,12 +15,17 @@
   --blur-veil: 14px;
   --watermark: 0.05;
 
-  /* Golden ratio, base 17px: 17 / 27.5 / 44.5 / 72 / 116.
-     Authored in px, expressed in rem so browser zoom keeps working. */
+  /* Golden ratio, base 17px: 17 / 27.5 / 44.5 / 72 / 116. Authored in px,
+     expressed in rem so browser zoom keeps working.
+
+     Reading sizes keep a rem term in the middle of the clamp, anchored 390 to
+     1728. A vw-only middle stops responding to browser zoom, which fails
+     WCAG 1.4.4. The display steps below stay purely viewport-driven on purpose:
+     they are a graphic element, not text anyone reads at length. */
   --t-micro: 0.6875rem;
-  --t-body: clamp(0.9375rem, 1.15vw, 1.0625rem);
-  --t-lead: clamp(1.1875rem, 2vw, 1.71875rem);
-  --t-h3: clamp(1.625rem, 3.2vw, 2.78125rem);
+  --t-body: clamp(0.9375rem, 0.9011rem + 0.1495vw, 1.0625rem);
+  --t-lead: clamp(1.1875rem, 1.0327rem + 0.6353vw, 1.71875rem);
+  --t-h3: clamp(1.625rem, 1.288rem + 1.3827vw, 2.78125rem);
   --t-h2: clamp(2.5rem, 5.2vw, 4.5rem);
   --t-display: clamp(3.5rem, 8.4vw, 7.25rem);
   --t-mail: clamp(1.25rem, 3.4vw, 3.625rem);
