@@ -1,9 +1,14 @@
 /* A fixed screen rather than a minimum: the three blocks are placed against the
-   stage, so the stage has to be a known height. */
+   stage, so the stage has to be a known height.
+   Every other section carries its own lead-in as --s5 of top padding. This one
+   cannot: the padding here is the screen's inner frame, and 252px of it would
+   crush the stage. The lead-in is a margin instead, sized so the gap from the
+   previous section still totals --s5 once the frame is counted. */
 .section {
   height: calc(100svh / var(--z, 1));
   display: flex;
   flex-direction: column;
+  margin-top: calc(var(--s5) - var(--s1));
   padding: var(--s1) var(--gx);
   overflow: hidden;
   position: relative;
@@ -21,18 +26,23 @@
 }
 
 /* isolate confines the blend below to this stage, so the address inverts
-   against the portrait and nothing else. */
+   against the portrait and nothing else.
+   The margin matches the footer's, so the gap under the index line, the gap
+   under the dates line and the gap above the footer rule are all one value. */
 .stage {
   flex: 1;
   min-height: 0;
   position: relative;
   isolation: isolate;
+  margin-top: var(--s2);
 }
 
+/* Level with the top of the portrait, so both clear the index line by the
+   same gap. */
 .headline {
   position: absolute;
   left: 0;
-  top: 2%;
+  top: 0;
 }
 
 /* Overrides the measure and the balancing the statement voice normally carries:
@@ -131,7 +141,7 @@
     display: flex;
     flex-direction: column;
     gap: var(--s2);
-    padding: var(--s3) 0 var(--s2);
+    padding: 0 0 var(--s2);
   }
 
   .headline,
