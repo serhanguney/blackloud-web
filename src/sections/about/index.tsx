@@ -27,14 +27,14 @@ export const About = () => (
 
       <Reveal className={styles.detail}>
         <Prose tone="muted">
-          From Switch It Up and Fuuunk Dat to And Then What, Male Maluco, and Perigosa, the sound
-          has always had one constant: momentum. No wasted space, no unnecessary build-ups. Just
-          groove that keeps moving when everything else slows down.
-        </Prose>
-        <Prose tone="muted">
           Releasing on Diynamic, TAU, SomethingNu, and labels across electronic music, he&rsquo;s
           built a catalogue that doesn&rsquo;t chase the moment. His tracks show up in sets by{' '}
           <Strong>Solomun, Camelphat, Pete Tong, Adana Twins, and Musumeci</Strong>.
+        </Prose>
+        <Prose tone="muted">
+          From Switch It Up and Fuuunk Dat to And Then What, Male Maluco, and Perigosa, the sound
+          has always had one constant: momentum. No wasted space, no unnecessary build-ups. Just
+          groove that keeps moving when everything else slows down.
         </Prose>
       </Reveal>
     </div>
