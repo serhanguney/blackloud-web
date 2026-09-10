@@ -80,16 +80,10 @@ export const Hero = () => (
     />
 
     <h1 className="sr-only">
-      {SITE.name} - {SITE.role} in {SITE.locality}
+      {SITE.name} - {SITE.role}
     </h1>
 
     <div className={styles.foot}>
-      <Mono tracking="micro" leaded className={styles.tagline}>
-        {SITE.tagline}
-        <br />
-        <span className={styles.taglineStrong}>{SITE.genreLine}</span>
-      </Mono>
-
       <Mono as="nav" tracking="social" aria-label="Listen" className={styles.socials}>
         {PRIMARY_SOCIALS.map((social) => (
           <a key={social.href} href={social.href} target="_blank" rel="noopener noreferrer">

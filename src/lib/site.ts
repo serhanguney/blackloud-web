@@ -23,25 +23,23 @@ const origin = () => {
   return INTERIM;
 };
 
+/**
+ * Blackloud is deliberately not tied to a country, a city or a genre. Nothing
+ * here should name one, on the page or in the metadata, and there is no
+ * locality, genre or time zone to reach for by design.
+ */
 export const SITE = {
   url: origin(),
   name: 'Blackloud',
   legalName: 'Blackloud®',
-  role: 'Melodic house and techno producer and DJ',
-  title: 'Blackloud - Melodic House & Techno Producer and DJ, Prague',
+  role: 'Producer and DJ',
+  title: 'Blackloud - Producer and DJ',
   description:
-    'Melodic house and techno from Prague. Sharp, direct, built for the club. Releases on Diynamic, TAU and SomethingNu, played by Solomun, Camelphat and Pete Tong.',
-  tagline: 'Sharp. Direct. Built for the club.',
-  genreLine: 'Melodic House & Techno · Prague',
+    'Producer and DJ. Releases on Diynamic, TAU and SomethingNu, played by Solomun, Camelphat, Pete Tong, Adana Twins and Musumeci. Booking worldwide.',
   email: 'booking@blackloudmusic.com',
-  locality: 'Prague',
-  region: 'Prague',
-  country: 'CZ',
-  timeZone: 'Europe/Prague',
   locale: 'en_GB',
-  genres: ['Melodic House', 'Melodic Techno', 'Indie Dance', 'Electronic'],
   labels: ['Diynamic', 'TAU', 'SomethingNu'],
   dates: 'https://www.bandsintown.com/a/56932',
   created: '2026-09-09T18:00:00+02:00',
-  updated: '2026-09-09T18:00:00+02:00',
+  updated: '2026-09-10T20:00:00+02:00',
 } as const;

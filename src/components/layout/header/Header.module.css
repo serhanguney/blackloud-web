@@ -49,10 +49,6 @@
   color: var(--mut);
 }
 
-.clock {
-  color: var(--mut);
-}
-
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -62,13 +58,7 @@
   }
 }
 
-/* The clock is the droppable item: it wraps the bar onto two lines at narrow
-   widths, and it appears again above the booking block, so nothing is lost. */
 @media (max-width: 840px) {
-  .clock {
-    display: none;
-  }
-
   .nav {
     gap: var(--d4);
   }

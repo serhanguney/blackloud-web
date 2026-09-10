@@ -100,8 +100,8 @@
   color: var(--acc);
 }
 
-/* One row rather than two absolute corners: at narrow widths the two blocks
-   would otherwise land on top of each other. */
+/* The platforms are the only thing down here now, and they hold the corner
+   opposite the wordmark. */
 .foot {
   position: absolute;
   left: var(--gx);
@@ -109,18 +109,9 @@
   bottom: var(--s0);
   z-index: var(--z-content);
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: flex-end;
   gap: var(--s0) var(--s1);
-}
-
-.tagline {
-  color: var(--mut);
-  animation: fadeIn 900ms ease 350ms both;
-}
-
-.taglineStrong {
-  color: var(--ink);
 }
 
 .socials {
@@ -141,16 +132,10 @@
 }
 
 @media (max-width: 840px) {
-  /* The row is kept, but the platforms stack up the right edge rather than
-     wrapping across the foot. The tagline takes the remaining left column. */
+  /* Stacked up the right edge rather than wrapping across the foot. */
   .foot {
     align-items: flex-end;
     gap: var(--d3);
-  }
-
-  .tagline {
-    flex: 1 1 auto;
-    min-width: 0;
   }
 
   .socials {

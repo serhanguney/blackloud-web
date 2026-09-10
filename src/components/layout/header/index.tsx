@@ -3,7 +3,6 @@
 import { useRef } from 'react';
 import { useTempus } from 'tempus/react';
 
-import { PragueTime } from '@/components/effects/clock';
 import { LogoGlyph } from '@/components/ui/logo-glyph';
 import { FRAME_ORDER } from '@/lib/frame';
 import { NAV } from '@/lib/motion';
@@ -73,10 +72,6 @@ export const Header = () => {
           </a>
         ))}
       </nav>
-
-      <div className={styles.clock}>
-        <PragueTime />
-      </div>
     </header>
   );
 };
