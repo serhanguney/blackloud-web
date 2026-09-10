@@ -1,8 +1,7 @@
 # Design system
 
-Where the tokens in `src/styles/tokens.css` come from. The source of truth is the design canvas in
-`source/`, which is not committed. Everything below was taken from it and then verified in a
-browser.
+Where the tokens in `src/styles/tokens.css` come from. They were taken from a design canvas that is
+not part of this repository, and then verified against a real browser.
 
 ## Colour
 

@@ -5,9 +5,8 @@ State as of 2026-09-09. Read `CLAUDE.md` first, then `docs/design-system.md` and
 
 ## Where things stand
 
-Built and deployed. Four sections in page order: hero, about, music, booking, plus a 404. The
-design canvas it was rebuilt from lives in `source/`, which is excluded locally via
-`.git/info/exclude` and is deliberately not in the repository.
+Built and deployed. Four sections in page order: hero, about, music, booking, plus a 404. It was
+rebuilt from a design canvas that is not part of this repository.
 
 Lighthouse on the production build: 100 accessibility, 100 best practices, 100 SEO, 100 agentic
 browsing. Re-run it after content changes rather than trusting it stays there.
