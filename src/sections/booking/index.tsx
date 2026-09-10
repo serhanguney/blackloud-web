@@ -22,7 +22,9 @@ export const Booking = () => (
     <div className={styles.body}>
       <div className={styles.copy}>
         <Reveal>
-          <Statement as="h2">Booking worldwide</Statement>
+          <Statement as="h2">
+            Playing your city next? <span className={styles.quiet}>Booking worldwide.</span>
+          </Statement>
         </Reveal>
 
         {/* The auto margin has to sit on the flex item, which is this wrapper and
