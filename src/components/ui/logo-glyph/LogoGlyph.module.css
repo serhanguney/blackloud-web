@@ -25,6 +25,11 @@
   height: 16px;
 }
 
+/* No dimensions of its own; whatever uses it sets them. */
+.bare {
+  display: block;
+}
+
 /* Sits in a line of display type, so it scales with the type rather than the page. */
 .inline {
   width: 0.42em;

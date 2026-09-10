@@ -3,7 +3,8 @@ import { cn } from '@/lib/cn';
 import styles from './LogoGlyph.module.css';
 
 type LogoGlyphProps = {
-  size?: 'header' | 'footer' | 'inline';
+  /** bare carries no dimensions: the caller sizes it. */
+  size?: 'header' | 'footer' | 'inline' | 'bare';
   variant?: 'solid' | 'outline';
   tone?: 'current' | 'accent';
   label?: string;

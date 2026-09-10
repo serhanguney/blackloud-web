@@ -2,6 +2,7 @@ import Image from 'next/image';
 
 import { Reveal } from '@/components/effects/reveal';
 import { SiteFooter } from '@/components/layout/site-footer';
+import { LogoGlyph } from '@/components/ui/logo-glyph';
 import { Mark } from '@/components/ui/mark';
 import { Mono } from '@/components/ui/mono';
 import { Stamp } from '@/components/ui/stamp';
@@ -25,6 +26,10 @@ export const Booking = () => (
         column: the headline top left, the portrait centre right, the address
         bottom left, with the disc bridging the gap between them. */}
     <div className={styles.stage}>
+      {/* First in the stage so it paints behind everything, and large enough to
+          give the empty half of the composition something to hold. */}
+      <LogoGlyph size="bare" className={styles.watermark} />
+
       <Reveal className={styles.headline}>
         <Statement as="h2" className={styles.statement}>
           Booking <Mark>worldwide</Mark>.

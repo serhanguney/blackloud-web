@@ -37,6 +37,20 @@
   margin-top: var(--s2);
 }
 
+/* Bleeds off the left gutter and sits behind the rest, at the same five percent
+   the mark is drawn at everywhere else. */
+.watermark {
+  position: absolute;
+  left: calc(var(--gx) / -2);
+  top: 50%;
+  transform: translateY(-50%);
+  height: min(calc(72vh / var(--z, 1)), 40rem);
+  aspect-ratio: 914 / 1313;
+  opacity: var(--watermark);
+  pointer-events: none;
+  user-select: none;
+}
+
 /* Level with the top of the portrait, so both clear the index line by the
    same gap. */
 .headline {
@@ -132,6 +146,10 @@
     flex-direction: column;
     gap: var(--s2);
     padding: 0 0 var(--s2);
+  }
+
+  .watermark {
+    display: none;
   }
 
   .headline,
