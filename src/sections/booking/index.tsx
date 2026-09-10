@@ -1,10 +1,8 @@
 import Image from 'next/image';
 
-import { PragueTime } from '@/components/effects/clock';
 import { Reveal } from '@/components/effects/reveal';
 import { SiteFooter } from '@/components/layout/site-footer';
 import { ExternalLink } from '@/components/ui/external-link';
-import { Mark } from '@/components/ui/mark';
 import { Mono } from '@/components/ui/mono';
 import { Statement } from '@/components/ui/statement';
 import { SITE } from '@/lib/site';
@@ -18,19 +16,13 @@ export const Booking = () => (
     <Reveal>
       <Mono as="div" className={styles.meta}>
         <span>03 / Booking</span>
-        <span>
-          <PragueTime />
-        </span>
       </Mono>
     </Reveal>
 
     <div className={styles.body}>
       <div className={styles.copy}>
         <Reveal>
-          <Statement as="h2">
-            Playing your city next?{' '}
-            <span className={styles.quiet}>Booking worldwide, based in Prague.</span>
-          </Statement>
+          <Statement as="h2">Booking worldwide</Statement>
         </Reveal>
 
         {/* The auto margin has to sit on the flex item, which is this wrapper and
@@ -65,13 +57,6 @@ export const Booking = () => (
           sizes="(max-width: 900px) 100vw, 420px"
           className={styles.portraitImage}
         />
-        <figcaption className={styles.stamp}>
-          <Mono size="pico" tracking="meta">
-            <Mark chip>
-              {SITE.locality}, {SITE.country}
-            </Mark>
-          </Mono>
-        </figcaption>
       </Reveal>
     </div>
 
