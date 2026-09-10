@@ -1,8 +1,7 @@
+/* Position and size are the caller's: this is an overlay, and where it hangs
+   depends on the composition it is hung on. */
 .stamp {
   position: absolute;
-  left: -10%;
-  bottom: -7%;
-  width: clamp(110px, 10.5vw, 150px);
   aspect-ratio: 1;
   transition: transform var(--duration-stamp) var(--ease-out-expo);
 }
@@ -49,13 +48,5 @@
 @keyframes spin {
   to {
     transform: rotate(360deg);
-  }
-}
-
-/* Once the portrait goes full width the overhang is wider than the page gutter,
-   so the disc runs off the left edge. Pull it back inside. */
-@media (max-width: 900px) {
-  .stamp {
-    left: -4%;
   }
 }
