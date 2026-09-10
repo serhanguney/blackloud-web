@@ -2,28 +2,20 @@ import { SITE } from './site';
 import { SOCIALS } from './socials';
 import { TRACKS } from './tracks';
 
-const address = {
-  '@type': 'PostalAddress',
-  addressLocality: SITE.locality,
-  addressCountry: SITE.country,
-};
-
 /* sameAs across every platform is the strongest entity signal an artist has:
-   it is the statement that these profiles and this site are one act. */
+   it is the statement that these profiles and this site are one act. It carries
+   more weight here than usual, because there is deliberately no genre, city or
+   country to anchor the entity to. */
 const artist = {
   '@type': 'MusicGroup',
   '@id': `${SITE.url}/#artist`,
   name: SITE.name,
   alternateName: SITE.legalName,
   description: SITE.description,
-  genre: SITE.genres,
   url: SITE.url,
   image: `${SITE.url}/opengraph-image.jpg`,
   email: `mailto:${SITE.email}`,
   sameAs: SOCIALS.map((social) => social.href),
-  foundingLocation: { '@type': 'City', name: SITE.locality },
-  location: { '@type': 'City', name: SITE.locality, address },
-  address,
   track: TRACKS.map((track) => ({
     '@type': 'MusicRecording',
     name: track.title,
@@ -42,7 +34,6 @@ const booking = {
   contactType: 'Booking',
   email: `mailto:${SITE.email}`,
   areaServed: 'Worldwide',
-  availableLanguage: ['en', 'cs'],
 };
 
 const website = {

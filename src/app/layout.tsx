@@ -20,16 +20,7 @@ export const metadata: Metadata = {
   creator: SITE.name,
   publisher: SITE.name,
   alternates: { canonical: '/' },
-  keywords: [
-    'Blackloud',
-    'melodic house',
-    'melodic techno',
-    'indie dance',
-    'DJ Prague',
-    'music producer Prague',
-    'Diynamic',
-    'DJ booking',
-  ],
+  keywords: ['Blackloud', 'music producer', 'DJ', 'Diynamic', 'DJ booking'],
   openGraph: {
     type: 'website',
     url: SITE.url,
