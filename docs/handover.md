@@ -52,6 +52,20 @@ agentic-browsing audit checks for it. What actually drives AI citation is the en
 1728 and 2560. The hero leans on `dvh`, `svh` and `backdrop-filter`, which is precisely where
 Safari diverges. Worth ten minutes on a phone before this goes to the client.
 
+## The brand carries no place, city or genre
+
+Blackloud is deliberately not associated with a country, a city or a genre. Nothing on the page or
+in the metadata names one: no locality, no `genre`, no `PostalAddress`, no time zone, and no clock.
+`src/lib/site.ts` has no fields for them by design. If a future change wants to add a location or a
+genre back, that is a brand decision, not a copy tweak.
+
+**This costs real SEO.** Locality and genre were two of the three strongest entity signals, and
+they are gone. What is left carrying the entity is `sameAs` across ten platforms, so keeping those
+profiles consistent matters more than it otherwise would.
+
+**The opengraph card still reads "MELODIC HOUSE & TECHNO · PRAGUE, CZ".** That text is baked into
+the supplied artwork and cannot be edited in code. A replacement card is needed.
+
 ## Deliberate, do not "fix" back
 
 - **No pointer glow.** Built, reviewed, removed on request.
