@@ -41,15 +41,17 @@
   text-wrap: nowrap;
 }
 
-/* Centred with auto margins rather than a translate: Reveal animates through
-   GSAP, which writes an inline transform and would overwrite a translateY here. */
+/* Runs the full height of the stage, so its foot lands level with the address
+   block. The width follows from the ratio, and the address is allowed to cross
+   it: the overlap falls on the dark of his shirt, where ink still reads.
+   Stretched with top and bottom rather than a transform, because Reveal animates
+   through GSAP and would overwrite one. */
 .portrait {
   position: absolute;
   right: 0;
   top: 0;
   bottom: 0;
-  margin: auto 0;
-  height: min(calc(52vh / var(--z, 1)), 50vw);
+  margin: 0;
   aspect-ratio: 4 / 5;
 }
 
@@ -61,10 +63,14 @@
   filter: grayscale(1) contrast(1.08);
 }
 
+/* Offset from its own size, not the portrait's: a percentage here scales with
+   the figure, and once the figure runs the full stage the disc was lifted clear
+   of the section and clipped by its overflow. */
 .stamp {
-  left: -16%;
-  top: -11%;
-  width: clamp(100px, 9.5vw, 140px);
+  --disc: clamp(100px, 9.5vw, 140px);
+  width: var(--disc);
+  left: calc(var(--disc) * -0.4);
+  top: calc(var(--disc) * -0.3);
 }
 
 .contact {
@@ -142,7 +148,7 @@
 
   .stamp {
     left: auto;
-    right: 4%;
-    top: -8%;
+    right: calc(var(--disc) * -0.2);
+    top: calc(var(--disc) * -0.35);
   }
 }
