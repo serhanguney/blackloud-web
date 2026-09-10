@@ -21,10 +21,12 @@ export const metadata: Metadata = {
   publisher: SITE.name,
   alternates: { canonical: '/' },
   keywords: ['Blackloud', 'music producer', 'DJ', 'Diynamic', 'DJ booking'],
+  /* The site name is deliberately not declared. A client that finds a title
+     beginning with it strips that prefix, which left a shared link reading
+     "Producer and DJ" with the brand missing. The JSON-LD carries the entity. */
   openGraph: {
     type: 'website',
     url: SITE.url,
-    siteName: SITE.name,
     title: SITE.title,
     description: SITE.description,
     locale: SITE.locale,
