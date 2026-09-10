@@ -39,7 +39,6 @@ export const SITE = {
   email: 'booking@blackloudmusic.com',
   locale: 'en_GB',
   labels: ['Diynamic', 'TAU', 'SomethingNu'],
-  dates: 'https://www.bandsintown.com/a/56932',
   created: '2026-09-09T18:00:00+02:00',
   updated: '2026-09-10T20:00:00+02:00',
 } as const;

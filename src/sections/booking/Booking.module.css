@@ -118,16 +118,6 @@
   color: var(--acc);
 }
 
-.dates {
-  margin-top: var(--s0);
-  color: var(--mut);
-}
-
-.datesLink {
-  color: var(--acc);
-  white-space: nowrap;
-}
-
 /* Below the breakpoint the corners collapse into a column: there is not enough
    width to offset anything against anything else. */
 @media (max-width: 900px) {

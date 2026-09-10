@@ -20,6 +20,7 @@ export const SOCIALS: Social[] = [
   { label: 'Apple Music', href: 'https://music.apple.com/cz/artist/blackloud/1057960753' },
   { label: 'YT Music', href: 'https://music.youtube.com/channel/UCaGaLR3FKV6WhJk_RyXk70w' },
   { label: 'RA', href: 'https://ra.co/dj/blackloud' },
+  { label: 'Bandsintown', href: 'https://www.bandsintown.com/a/56932' },
 ];
 
 export const PRIMARY_SOCIALS = SOCIALS.filter((social) => social.primary);
