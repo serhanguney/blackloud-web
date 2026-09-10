@@ -103,12 +103,6 @@
   filter: grayscale(1) contrast(1.08);
 }
 
-.stamp {
-  position: absolute;
-  left: var(--d1);
-  bottom: var(--d1);
-}
-
 /* Around 900px the copy and the portrait stop fitting side by side and wrap.
    Once stacked there is no second column to balance against, so the portrait
    takes the full measure rather than sitting at 420px with dead space beside
