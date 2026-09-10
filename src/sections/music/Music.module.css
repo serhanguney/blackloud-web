@@ -14,11 +14,13 @@
   color: var(--mut);
 }
 
+/* One item since the also-listed line came out, so it sits with the meta column
+   rather than stranded on the left. */
 .footnote {
   border-top: var(--border-width) solid var(--line);
   padding-top: var(--d2);
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   flex-wrap: wrap;
   gap: var(--d2);
   color: var(--mut);
@@ -49,11 +51,6 @@
 .subhead {
   display: block;
   margin: 0 0 var(--d5);
-  color: var(--mut);
-}
-
-.caption {
-  margin-top: var(--d1);
   color: var(--mut);
 }
 

@@ -11,8 +11,6 @@ import { SPOTIFY } from '@/lib/socials';
 
 import styles from './Music.module.css';
 
-const ALSO = ['Switch It Up', 'Get This', 'We Hit You', 'GoodGod', 'Male Maluco'];
-
 const MIXTAPES = [
   {
     title: 'Birgit Berlin Live',
@@ -58,7 +56,6 @@ export const Music = () => (
     <Reveal>
       <TrackPlayer />
       <Mono as="div" size="nano" tracking="meta" className={styles.footnote}>
-        <span>Also: {ALSO.join(' · ')}</span>
         <ExternalLink href={SPOTIFY} className={styles.catalogue} arrow>
           Full catalogue on Spotify
         </ExternalLink>
@@ -72,12 +69,9 @@ export const Music = () => (
         </Mono>
         <VideoEmbed
           id="2xFbIMPLJ24"
-          title="Blackloud [Diynamic] melodic house and indie dance DJ set"
+          title="Blackloud, DJ set for Diynamic"
           poster="/featured-set.webp"
         />
-        <Mono as="div" size="nano" tracking="meta" className={styles.caption}>
-          Melodic House &amp; Indie Dance DJ Set
-        </Mono>
       </Reveal>
 
       <Reveal className={styles.mixtapes}>
