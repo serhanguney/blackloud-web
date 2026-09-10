@@ -4,6 +4,7 @@ import { Reveal } from '@/components/effects/reveal';
 import { SiteFooter } from '@/components/layout/site-footer';
 import { ExternalLink } from '@/components/ui/external-link';
 import { Mono } from '@/components/ui/mono';
+import { Stamp } from '@/components/ui/stamp';
 import { Statement } from '@/components/ui/statement';
 import { SITE } from '@/lib/site';
 
@@ -25,25 +26,27 @@ export const Booking = () => (
           <Statement as="h2">Booking worldwide</Statement>
         </Reveal>
 
-        {/* The auto margin has to sit on the flex item, which is this wrapper and
-            not the anchor, or space-between strands the address mid-column. */}
-        <Reveal className={styles.mailRow}>
-          <a href={`mailto:${SITE.email}`} data-plain className={styles.mail}>
-            {mailbox}
-            <span className={styles.at}>@</span>
-            <wbr />
-            {domain}
-          </a>
-        </Reveal>
+        {/* The address and the line under it are one thought, so they are one
+            block with a tight gap rather than two items the column spaces out. */}
+        <div className={styles.contact}>
+          <Reveal>
+            <a href={`mailto:${SITE.email}`} data-plain className={styles.mail}>
+              {mailbox}
+              <span className={styles.at}>@</span>
+              <wbr />
+              {domain}
+            </a>
+          </Reveal>
 
-        <Reveal>
-          <Mono tracking="meta" className={styles.dates}>
-            Or say hi at a show &middot; dates on{' '}
-            <ExternalLink href={SITE.dates} className={styles.datesLink} arrow>
-              Bandsintown
-            </ExternalLink>
-          </Mono>
-        </Reveal>
+          <Reveal>
+            <Mono tracking="meta" className={styles.dates}>
+              Or say hi at a show &middot; dates on{' '}
+              <ExternalLink href={SITE.dates} className={styles.datesLink} arrow>
+                Bandsintown
+              </ExternalLink>
+            </Mono>
+          </Reveal>
+        </div>
       </div>
 
       <span aria-hidden="true" className={styles.watermark} />
@@ -57,6 +60,7 @@ export const Booking = () => (
           sizes="(max-width: 900px) 100vw, 420px"
           className={styles.portraitImage}
         />
+        <Stamp>Booking worldwide &#10035; Come say hi &#10035;&nbsp;</Stamp>
       </Reveal>
     </div>
 

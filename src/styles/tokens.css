@@ -109,10 +109,13 @@
   --duration-intro: 1000ms;
   --duration-eq: 800ms;
   --duration-progress: 500ms;
+  --duration-stamp: 500ms;
 
   --stagger-reveal: 110ms;
   /* Mirrored by REVEAL.rise in src/lib/motion.ts. */
   --reveal-rise: 44px;
+
+  --spin-stamp: 22s;
 
   --drift-back: 40s;
   --drift-mid: 46s;
