@@ -11,38 +11,43 @@ import { SPOTIFY } from '@/lib/socials';
 
 import styles from './Music.module.css';
 
+/* Order and dates taken from the artist's own SoundCloud playlist, newest
+   first. Every one of these is 2026, so the row shows the month as well: a
+   column of five identical years reads as a bug rather than a chronology. */
 const MIXTAPES = [
   {
-    title: 'Birgit Berlin Live',
-    year: '2025',
-    href: 'https://soundcloud.com/blackloudmusic/blackloud-birgit-berlin-august-2025',
-    cover: '/mixtapes/birgit-berlin.webp',
+    title: 'Urge To Podcast 077',
+    date: 'Aug 2026',
+    href: 'https://soundcloud.com/urgetodance/utp077',
+    cover: '/mixtapes/urge-to-podcast-077.webp',
+  },
+  {
+    title: 'Isolate Radio 030',
+    date: 'Aug 2026',
+    href: 'https://soundcloud.com/isolatemusic/isolate-radio-show-030',
+    cover: '/mixtapes/isolate-radio-030.webp',
   },
   {
     title: 'NWDCAST 084',
-    year: '2024',
+    date: 'Apr 2026',
     href: 'https://soundcloud.com/nowwedeep/nwdcast-084-blackloud',
     cover: '/mixtapes/nwdcast-084.webp',
   },
   {
-    title: 'EG After 166',
-    year: '2024',
-    href: 'https://soundcloud.com/egpodcast/eg-after-166-blackloud',
-    cover: '/mixtapes/eg-after-166.webp',
-  },
-  {
     title: 'Ritmo Futuro 010',
-    year: '2023',
+    date: 'Mar 2026',
     href: 'https://soundcloud.com/ritmofuturo/guestmix-010-blackloud',
     cover: '/mixtapes/ritmo-futuro-010.webp',
   },
   {
     title: 'Synesthesia Invites 028',
-    year: '2023',
+    date: 'Jan 2026',
     href: 'https://soundcloud.com/synesthesiamusicart/synesthesia-invites-blackloud-028',
     cover: '/mixtapes/synesthesia-028.webp',
   },
 ];
+
+const ALL_SETS = 'https://soundcloud.com/blackloudmusic/sets/dj-sets';
 
 export const Music = () => (
   <section id="music" className={styles.section}>
@@ -91,11 +96,16 @@ export const Music = () => (
               />
               <span className={styles.mixTitle}>{mix.title}</span>
               <Mono as="span" size="small" tracking="none" className={styles.year}>
-                {mix.year} <Arrow size={10} />
+                {mix.date} <Arrow size={10} />
               </Mono>
             </ExternalLink>
           ))}
         </div>
+        <Mono as="div" size="nano" tracking="meta" className={styles.allSets}>
+          <ExternalLink href={ALL_SETS} className={styles.catalogue} arrow>
+            All sets on SoundCloud
+          </ExternalLink>
+        </Mono>
       </Reveal>
     </div>
   </section>

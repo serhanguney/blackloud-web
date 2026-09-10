@@ -102,3 +102,10 @@
     gap: var(--d1);
   }
 }
+
+/* Five of fifteen are listed, so the rest stay one click away. */
+.allSets {
+  margin-top: var(--d2);
+  text-align: right;
+  color: var(--mut);
+}

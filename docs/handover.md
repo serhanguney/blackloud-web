@@ -66,6 +66,19 @@ profiles consistent matters more than it otherwise would.
 **The opengraph card still reads "MELODIC HOUSE & TECHNO · PRAGUE, CZ".** That text is baked into
 the supplied artwork and cannot be edited in code. A replacement card is needed.
 
+## Where the mixtape list comes from
+
+The five rows in Music are the five most recent entries of the artist's own SoundCloud playlist,
+`soundcloud.com/blackloudmusic/sets/dj-sets`, newest first. That playlist is the source of truth
+for both order and date; the list here was wrong on four of five years before it was checked
+against it. There are fifteen sets in total, so the list links out to the full playlist.
+
+All five are from 2026, which is why the row shows month and year rather than year alone. A column
+of five identical years reads as a bug rather than a chronology.
+
+If the list is refreshed, note that some of the other ten name a genre or a country in their titles
+(one is "Melodic Therapy #206 - Czech Republic"), which the brand deliberately avoids.
+
 ## Deliberate, do not "fix" back
 
 - **No pointer glow.** Built, reviewed, removed on request.
