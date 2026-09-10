@@ -1,64 +1,93 @@
+/* A fixed screen rather than a minimum: the three blocks are placed against the
+   stage, so the stage has to be a known height. */
 .section {
-  padding: var(--s2) var(--gx) var(--s1);
-  min-height: calc(100svh / var(--z, 1));
+  height: calc(100svh / var(--z, 1));
   display: flex;
   flex-direction: column;
-  position: relative;
+  padding: var(--s1) var(--gx);
   overflow: hidden;
+  position: relative;
 }
 
 .meta {
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
-  align-items: baseline;
-  gap: var(--d0) var(--s0);
+  gap: var(--s0);
   color: var(--mut);
 }
 
-.body {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: stretch;
-  gap: var(--s2) var(--s3);
-  margin: auto 0;
-  padding: var(--s2) 0;
+.metaStrong {
+  color: var(--ink);
 }
 
-/* One group, sat on the baseline of the row so it lands level with the foot of
-   the portrait. Spread across the column it left a void in the middle; centred
-   it floated. */
-.copy {
-  flex: 1.618 1 380px;
-  min-width: 0;
-  align-self: stretch;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  gap: var(--s2);
+.stage {
+  flex: 1;
+  min-height: 0;
+  position: relative;
+}
+
+.headline {
+  position: absolute;
+  left: 0;
+  top: 2%;
+}
+
+/* Overrides the measure and the balancing the statement voice normally carries:
+   this one is a single line by design. */
+.statement {
+  max-width: none;
+  white-space: nowrap;
+  line-height: 1.12;
+  text-wrap: nowrap;
+}
+
+/* Centred with auto margins rather than a translate: Reveal animates through
+   GSAP, which writes an inline transform and would overwrite a translateY here. */
+.portrait {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+  height: min(calc(52vh / var(--z, 1)), 50vw);
+  aspect-ratio: 4 / 5;
+}
+
+.portraitImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+  filter: grayscale(1) contrast(1.08);
+}
+
+.stamp {
+  left: -16%;
+  top: -11%;
+  width: clamp(100px, 9.5vw, 140px);
 }
 
 .contact {
-  display: flex;
-  flex-direction: column;
-  gap: var(--d5);
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  max-width: min(62ch, 68%);
 }
 
-.quiet {
+.inquiries {
+  margin: 0 0 var(--s0);
+  letter-spacing: 0.1em;
   color: var(--mut);
 }
 
-/* The address is the largest interactive element on the page by a distance,
-   which is the point: it is the only thing being asked for. */
+/* Hard broken rather than wrapped, so the two lines are the same every time. */
 .mail {
   display: block;
-  width: max-content;
-  max-width: 100%;
   font-weight: var(--weight-black);
   font-stretch: var(--wdth-display);
   font-size: var(--t-mail);
-  line-height: var(--leading-mail);
-  letter-spacing: var(--tracking-mail);
+  line-height: 0.92;
+  letter-spacing: -0.04em;
   text-transform: uppercase;
 }
 
@@ -67,65 +96,53 @@
 }
 
 .dates {
+  margin-top: var(--s0);
   color: var(--mut);
 }
 
 .datesLink {
   color: var(--acc);
-  /* Keeps the arrow with the word rather than orphaning it on the next line. */
   white-space: nowrap;
 }
 
-/* Bleeds off the right edge, behind everything, at five percent. */
-.watermark {
-  position: absolute;
-  right: calc(-1 * var(--gx) / 2);
-  bottom: 8%;
-  height: min(calc(52vh / var(--z, 1)), 540px);
-  width: auto;
-  aspect-ratio: 914 / 1313;
-  background: var(--ink);
-  opacity: var(--watermark);
-  mask: url('/logo.svg') center / contain no-repeat;
-  pointer-events: none;
-  user-select: none;
-}
-
-.portrait {
-  flex: 1 1 260px;
-  min-width: 0;
-  margin: 0 0 0 auto;
-  position: relative;
-  aspect-ratio: 4 / 5;
-  max-width: 420px;
-}
-
-.portraitImage {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 20%;
-  filter: grayscale(1) contrast(1.08);
-}
-
-/* Around 900px the copy and the portrait stop fitting side by side and wrap.
-   Once stacked there is no second column to balance against, so the portrait
-   takes the full measure rather than sitting at 420px with dead space beside
-   it. The height cap stops it becoming a monolith on a wide tablet, and cover
-   absorbs the difference. */
+/* Below the breakpoint the corners collapse into a column: there is not enough
+   width to offset anything against anything else. */
 @media (max-width: 900px) {
-  /* auto margins centre the block against a full-height section, which on a
-     phone leaves a dead band between the portrait and the footer. Stacked, the
-     content just flows and the footer follows it. */
-  .body {
+  .section {
+    height: auto;
+    min-height: calc(100svh / var(--z, 1));
+  }
+
+  .stage {
+    position: static;
+    display: flex;
+    flex-direction: column;
+    gap: var(--s2);
+    padding: var(--s3) 0 var(--s2);
+  }
+
+  .headline,
+  .contact,
+  .portrait {
+    position: static;
     margin: 0;
-    padding: var(--s2) 0 0;
+    max-width: none;
+  }
+
+  .statement {
+    white-space: normal;
+    text-wrap: balance;
   }
 
   .portrait {
-    margin-left: 0;
+    height: auto;
     width: 100%;
-    max-width: none;
-    max-height: calc(70svh / var(--z, 1));
+    order: -1;
+  }
+
+  .stamp {
+    left: auto;
+    right: 4%;
+    top: -8%;
   }
 }
