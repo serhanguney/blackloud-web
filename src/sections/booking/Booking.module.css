@@ -20,10 +20,13 @@
   color: var(--ink);
 }
 
+/* isolate confines the blend below to this stage, so the address inverts
+   against the portrait and nothing else. */
 .stage {
   flex: 1;
   min-height: 0;
   position: relative;
+  isolation: isolate;
 }
 
 .headline {
@@ -73,11 +76,15 @@
   top: calc(var(--disc) * -0.3);
 }
 
+/* The blend sits here rather than on the address itself: Reveal animates this
+   element through GSAP, which leaves an inline transform, and that would make a
+   stacking context that traps a blend applied any deeper. */
 .contact {
   position: absolute;
   left: 0;
   bottom: 0;
-  max-width: min(62ch, 68%);
+  max-width: min(72ch, 82%);
+  mix-blend-mode: difference;
 }
 
 .inquiries {

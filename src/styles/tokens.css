@@ -31,7 +31,7 @@
   /* The canvas formula has no floor, so on a phone the address collapsed to
      about 15px. The max() holds it at a readable size that still fits the
      measure once the columns stack. */
-  --t-mail: max(1.25rem, min(3.8vw, calc(8.5vh / var(--z, 1))));
+  --t-mail: max(1.25rem, min(4.4vw, calc(9.5vh / var(--z, 1))));
   --t-pico: 0.59375rem;
   --t-nano: 0.625rem;
   --t-nano-plus: 0.65625rem;
